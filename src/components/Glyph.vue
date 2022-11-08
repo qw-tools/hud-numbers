@@ -20,31 +20,35 @@ let ctx = null;
 
 const renderCanvas = () => {
   if (!canvas) {
-    return
+    return;
   }
 
   ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.font = `${props.fontSize}px "${props.fontFamily}"`;
   ctx.fillStyle = props.color;
-  ctx.fillText(props.char, props.offsetX + (canvas.width / 2), props.offsetY + (canvas.height / 2));
+  ctx.fillText(
+    props.char,
+    props.offsetX + canvas.width / 2,
+    props.offsetY + canvas.height / 2
+  );
 
   //console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
 
   if (props.drawCrosshair) {
     drawCrosshair(ctx);
   }
-}
+};
 
 const drawCrosshair = (ctx) => {
-  const center = { x: (canvas.width / 2) - 1, y: (canvas.height / 2) - 1 }
+  const center = { x: canvas.width / 2 - 1, y: canvas.height / 2 - 1 };
   ctx.beginPath();
   ctx.moveTo(center.x, 0);
   ctx.lineTo(center.x, canvas.height - 1);
   ctx.moveTo(0, center.y);
   ctx.lineTo(canvas.width - 1, center.y);
   ctx.stroke();
-}
+};
 
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -56,9 +60,9 @@ onMounted(() => {
     ctx = canvas.getContext("2d");
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    renderCanvas()
-  })
-})
+    renderCanvas();
+  });
+});
 
 onUpdated(renderCanvas);
 
@@ -66,18 +70,15 @@ const downloadCanvas = () => {
   canvas.toBlob(function (blob) {
     saveAs(blob, `${id}.png`);
   });
-}
-
-
+};
 </script>
 
 <template>
   <canvas width="64" height="64" :id="id" @click="downloadCanvas" />
 </template>
 
-
 <style>
 canvas {
-  cursor: pointer
+  cursor: pointer;
 }
 </style>
