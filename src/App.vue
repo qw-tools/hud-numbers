@@ -25,7 +25,7 @@ import FontPreload from "./components/FontPreload.vue";</script>
           <GoogleFontSelect />
         </div>
         <div class="flex">
-          <input v-model.lazy="store.glyphs.fontSize" type="range" min="48" step="8" max="96" class="w-24 mr-2"> <span>{{ store.glyphs.fontSize }}px</span>
+          <input v-model.lazy="store.glyphs.fontSize" type="range" min="48" step="4" max="96" class="w-24 mr-2"> <span>{{ store.glyphs.fontSize }}px</span>
         </div>
 
         <div class="flex ml-6 space-x-2 items-center">
