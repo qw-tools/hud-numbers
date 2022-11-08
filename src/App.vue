@@ -1,22 +1,23 @@
 <script setup>
 import { store } from "./store.js";
-import GoogleFontLink from "./components/GoogleFontLink.vue";
-import GoogleFontSelector from "./components/GoogleFontSelector.vue";
+import GoogleFontSelect from "./components/GoogleFontSelect.vue";
+import GoogleFontPageLink from "./components/GoogleFontPageLink.vue";
 import WadSet from "./components/WadSet.vue";
 </script>
 
 <template>
-  <GoogleFontLink />
-
   <div class="max-w-5xl mx-auto">
     <div class="my-4">
-      <div class="flex items-center space-x-8">
-        <div class="font-bold">Font:</div>&nbsp;
+      <div class="flex items-center">
+        <div class="font-bold">Font</div>&nbsp;
         <div>
-          <GoogleFontSelector />
+          <GoogleFontSelect />
         </div>
-        <div class="flex space-x-4">
-          <input v-model="store.glyphs.size" type="range" min="48" step="8" max="128"> <span>{{ store.glyphs.size }}px</span>
+        <div class="flex space-x-2">
+          <input v-model="store.glyphs.size" type="range" min="48" step="8" max="192"> <span>{{ store.glyphs.size }}px</span>
+        </div>
+        <div class="ml-auto">
+          <GoogleFontPageLink :fontFamily="store.glyphs.fontFamily" />
         </div>
       </div>
     </div>
