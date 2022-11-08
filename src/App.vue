@@ -23,13 +23,14 @@ import FontPreload from "./components/FontPreload.vue";</script>
         <div>
           <GoogleFontSelect />
         </div>
-        <div class="flex ml-2">
-          <input v-model.lazy="store.glyphs.fontSize" type="range" min="48" step="8" max="96" class="mr-2"> <span>{{ store.glyphs.fontSize }}px</span>
+        <div class="flex">
+          <input v-model.lazy="store.glyphs.fontSize" type="range" min="48" step="8" max="96" class="w-24 mr-2"> <span>{{ store.glyphs.fontSize }}px</span>
         </div>
 
         <div class="flex ml-6 space-x-2 items-center">
-          <strong>offset</strong> (x,y) <input v-model.lazy="store.glyphs.offsetX" type="number" class="app-input w-14" min="-32" max="32"><input
-            v-model.lazy="store.glyphs.offsetY" type="number" class="app-input w-14" min="-32" max="32"> px
+          <strong>offset</strong> <span class="text-gray-500">(x,y)</span>
+          <input v-model.lazy="store.glyphs.offsetX" type="number" class="app-input w-14" min="-32" max="32">
+          <input v-model.lazy="store.glyphs.offsetY" type="number" class="app-input w-14" min="-32" max="32"> &nbsp; px
         </div>
 
         <div class="ml-auto">
@@ -42,27 +43,25 @@ import FontPreload from "./components/FontPreload.vue";</script>
 
     <hr class="my-6" />
 
-    <div class="space-y-2">
-      <div class="flex">
-        <div class="mr-4">
-          <input type="color" v-model.lazy="store.numColor" class="w-8 h-8" />
-        </div>
-        <div class="grow">
-          <GlyphGrid numType="num" />
-        </div>
+    <div class="flex">
+      <div class="mr-4">
+        <input type="color" v-model.lazy="store.numColor" class="w-8 h-8" />
       </div>
-
-      <div class="flex">
-        <div class="mr-4">
-          <input type="color" v-model.lazy="store.anumColor" class="w-8 h-8" />
-        </div>
-        <div class="grow">
-          <GlyphGrid numType="anum" />
-        </div>
+      <div class="grow">
+        <GlyphGrid numType="num" />
       </div>
-
-      <div class="text-center">(click to download)</div>
     </div>
+
+    <div class="flex mt-2">
+      <div class="mr-4">
+        <input type="color" v-model.lazy="store.anumColor" class="w-8 h-8" />
+      </div>
+      <div class="grow">
+        <GlyphGrid numType="anum" />
+      </div>
+    </div>
+
+    <div class="text-center mt-4 text-sky-800">ⓘ click a glyph to download.</div>
 
   </div>
 </template>
