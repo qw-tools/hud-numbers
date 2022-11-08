@@ -12,8 +12,9 @@ import FontPreload from "./components/FontPreload.vue";</script>
 
     <div class="p-4 font-bold bg-sky-100 flex items-center">
       <div class="font-bold">QuakeWorld WAD Numbers generator</div>
-      <div class="ml-auto">
+      <div class="ml-auto text-gray-600 text-xs">
         <GoogleFontPageLink :fontFamily="store.glyphs.fontFamily" />
+        <span class="text-gray-400 mx-2">|</span> <a href="https://github.com/vikpe/qwnum" class="text-sky-700">Source on GitHub &#8599;</a>
       </div>
     </div>
 
