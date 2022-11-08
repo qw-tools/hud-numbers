@@ -55,7 +55,7 @@ function sleep(time) {
 }
 
 onMounted(() => {
-  sleep(100).then(() => {
+  sleep(500).then(() => {
     canvas = document.getElementById(id);
     ctx = canvas.getContext("2d");
     ctx.textAlign = "center";
