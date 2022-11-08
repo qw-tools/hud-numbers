@@ -29,14 +29,18 @@ const renderCanvas = () => {
   console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
 
   if (props.drawCrosshair) {
-    const center = { x: (canvas.width / 2) - 1, y: (canvas.height / 2) - 1 }
-    ctx.beginPath();
-    ctx.moveTo(center.x, 0);
-    ctx.lineTo(center.x, canvas.height - 1);
-    ctx.moveTo(0, center.y);
-    ctx.lineTo(canvas.width - 1, center.y);
-    ctx.stroke();
+    drawCrosshair(ctx);
   }
+}
+
+const drawCrosshair = (ctx) => {
+  const center = { x: (canvas.width / 2) - 1, y: (canvas.height / 2) - 1 }
+  ctx.beginPath();
+  ctx.moveTo(center.x, 0);
+  ctx.lineTo(center.x, canvas.height - 1);
+  ctx.moveTo(0, center.y);
+  ctx.lineTo(canvas.width - 1, center.y);
+  ctx.stroke();
 }
 
 onMounted(() => {
