@@ -2,5 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+.app-input {
+    @apply border rounded border-gray-300 p-2 bg-white shadow mx-4;
 }
