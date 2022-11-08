@@ -9,10 +9,12 @@ import GlyphGrid from "./components/GlyphGrid.vue";
 <template>
   <div class="max-w-5xl mx-auto">
 
-    <div class="p-4 font-bold bg-sky-50">
-      <h4 style="color: #000; ">QuakeWorld WAD Numbers generator</h4>
+    <div class="p-4 font-bold bg-sky-100 flex items-center">
+      <div class="font-bold">QuakeWorld WAD Numbers generator</div>
+      <div class="ml-auto">
+        <GoogleFontPageLink :fontFamily="store.glyphs.fontFamily" />
+      </div>
     </div>
-
 
     <div class="my-4">
       <div class="flex items-center">
@@ -24,12 +26,8 @@ import GlyphGrid from "./components/GlyphGrid.vue";
           <input v-model.lazy="store.glyphs.fontSize" type="range" min="48" step="8" max="96" class="mr-2"> <span>{{ store.glyphs.fontSize }}px</span>
         </div>
 
-        <div class="ml-4">
-          <label class="cursor-pointer"><input type="checkbox" v-model="store.drawCrosshair" /> Draw center helper</label>
-        </div>
-
         <div class="ml-auto">
-          <GoogleFontPageLink :fontFamily="store.glyphs.fontFamily" />
+          <label class="cursor-pointer"><input type="checkbox" v-model="store.drawCrosshair" /> Draw center helper</label>
         </div>
       </div>
     </div>
