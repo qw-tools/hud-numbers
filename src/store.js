@@ -1,11 +1,10 @@
 import { reactive } from "vue";
 
-const defaultGlyphFontSize = "80";
+const defaultGlyphFontSize = "64";
 const fontNames = [
   "Alfa Slab One",
   "Bungee",
   "Bungee Inline",
-  "Lato",
   "Londrina Shadow",
   "Righteous",
   "Ultra",
