@@ -26,7 +26,7 @@ const renderCanvas = () => {
   ctx.fillStyle = props.color;
   ctx.fillText(props.char, canvas.width / 2, canvas.height / 2);
 
-  console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
+  //console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
 
   if (props.drawCrosshair) {
     drawCrosshair(ctx);
@@ -43,12 +43,18 @@ const drawCrosshair = (ctx) => {
   ctx.stroke();
 }
 
+function sleep(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
 onMounted(() => {
-  canvas = document.getElementById(id);
-  ctx = canvas.getContext("2d");
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  renderCanvas()
+  sleep(100).then(() => {
+    canvas = document.getElementById(id);
+    ctx = canvas.getContext("2d");
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    renderCanvas()
+  })
 })
 
 onUpdated(renderCanvas);

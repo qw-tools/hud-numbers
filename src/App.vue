@@ -3,10 +3,11 @@ import { store } from "./store.js";
 import GoogleFontSelect from "./components/GoogleFontSelect.vue";
 import GoogleFontPageLink from "./components/GoogleFontPageLink.vue";
 import GlyphGrid from "./components/GlyphGrid.vue";
-
-</script>
+import FontPreload from "./components/FontPreload.vue";</script>
 
 <template>
+  <FontPreload />
+
   <div class="max-w-5xl mx-auto">
 
     <div class="p-4 font-bold bg-sky-100 flex items-center">

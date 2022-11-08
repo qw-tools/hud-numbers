@@ -4,16 +4,10 @@ import { store } from "./../store.js";
 defineProps({
   name: String,
 });
-
-const fontNameToSlug = name => name.replaceAll(" ", "+");
 </script>
 
 <template>
-  <link v-for="name in store.fontNames"
-        :href="`https://fonts.googleapis.com/css2?family=${fontNameToSlug(name)}&display=swap`"
-        rel="stylesheet"
-  />
-  <select v-model="store.glyphs.fontFamily" class="p-2 rounded">
+  <select v-model="store.glyphs.fontFamily" class="p-2 rounded border">
     <option v-for="name in store.fontNames">{{ name }}</option>
   </select>
 </template>
