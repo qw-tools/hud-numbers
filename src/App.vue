@@ -9,8 +9,8 @@ import FontPreload from "./components/FontPreload.vue";
 <template>
   <FontPreload />
 
-  <div class="max-w-5xl mx-auto">
-    <div class="p-4 font-bold bg-sky-100 flex items-center">
+  <div class="max-w-5xl mx-auto mt-4">
+    <div class="font-bold flex items-center">
       <div class="font-bold">QuakeWorld WAD Numbers generator</div>
       <div class="ml-auto text-gray-600 text-xs">
         <GoogleFontPageLink :fontFamily="store.glyphs.fontFamily" />
@@ -21,10 +21,11 @@ import FontPreload from "./components/FontPreload.vue";
       </div>
     </div>
 
-    <div class="my-4">
+    <hr class="my-4" />
+
+    <div>
       <div class="flex items-center">
         <div class="font-bold">Font</div>
-        &nbsp;
         <div>
           <GoogleFontSelect />
         </div>
@@ -41,7 +42,7 @@ import FontPreload from "./components/FontPreload.vue";
         </div>
 
         <div class="flex ml-6 space-x-2 items-center">
-          <strong>offset</strong> <span class="text-gray-500">(x,y)</span>
+          <strong>Offset</strong> <span class="text-gray-500">(x,y)</span>
           <input
             v-model.lazy="store.glyphs.offsetX"
             type="number"
@@ -60,7 +61,7 @@ import FontPreload from "./components/FontPreload.vue";
         </div>
 
         <div class="ml-auto">
-          <label class="cursor-pointer">
+          <label>
             <input type="checkbox" v-model="store.drawCrosshair" /> Draw center
             helper
           </label>
@@ -68,11 +69,15 @@ import FontPreload from "./components/FontPreload.vue";
       </div>
     </div>
 
-    <hr class="my-6" />
+    <hr class="my-4" />
 
     <div class="flex">
       <div class="mr-4">
-        <input type="color" v-model.lazy="store.numColor" class="w-8 h-8" />
+        <label class="block text-center w-14">
+          <input type="color" v-model.lazy="store.numColor" class="w-8 h-8" />
+          <br />
+          <code class="text-xs">{{ store.numColor }}</code>
+        </label>
       </div>
       <div class="grow">
         <GlyphGrid numType="num" />
@@ -81,13 +86,24 @@ import FontPreload from "./components/FontPreload.vue";
 
     <div class="flex mt-2">
       <div class="mr-4">
-        <input type="color" v-model.lazy="store.anumColor" class="w-8 h-8" />
+        <label class="block text-center w-14">
+          <input type="color" v-model.lazy="store.anumColor" class="w-8 h-8" />
+          <br />
+          <code class="text-xs">{{ store.anumColor }}</code>
+        </label>
       </div>
       <div class="grow">
         <GlyphGrid numType="anum" />
       </div>
     </div>
 
+    <div class="mt-2 ml-16 mr-auto">
+      <label class="block text-center w-14">
+        <input type="color" class="w-8 h-8" v-model.lazy="store.bgColor" />
+        <br />
+        <code class="text-xs">{{ store.bgColor }}</code>
+      </label>
+    </div>
     <div class="text-center mt-4 text-sky-800">
       <strong>ⓘ click a glyph to download</strong>, and save into
       <span class="bg-gray-200 text-black text-sm p-1">/qw/textures/wad/</span>
