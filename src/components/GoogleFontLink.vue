@@ -4,8 +4,8 @@ import { store } from "./../store.js";
 
 <template>
   <link
-    :href="`https://fonts.googleapis.com/css2?family=${store.fontName}&display=swap`"
-    rel="stylesheet"
+      :href="`https://fonts.googleapis.com/css2?family=${store.fontName}&display=swap`"
+      rel="stylesheet"
   />
 </template>
 

@@ -5,11 +5,13 @@ defineProps({
   name: String,
 });
 
-const fontNameToUrl = (name) => `https://fonts.google.com/specimen/${name}`;
+const fontToSlug = name => name.replaceAll(" ", "+");
+const fontNameToUrl = (name) => `https://fonts.google.com/specimen/${fontToSlug(name)}`;
 
 const fonts = [
   "Alfa Slab One",
-  "Bungie Spice",
+  "Bungee",
+  "Bungee Inline",
   "Lato",
   "Righteous",
   "Roboto",
@@ -17,12 +19,13 @@ const fonts = [
   "Zen Dots",
 ].map((name) => ({
   name,
+  slug: fontToSlug(name),
   url: fontNameToUrl(name),
 }));
 </script>
 
 <template>
-  <select v-model="store.fontName">
-    <option v-for="font in fonts" :value="font.name">{{ font.name }}</option>
+  <select v-model="store.fontName" class="p-2 rounded">
+    <option v-for="font in fonts" :value="font.slug">{{ font.name }}</option>
   </select>
 </template>
