@@ -1,8 +1,7 @@
 <script setup>
-import NumGridItem from "./NumGridItem.vue";
-
 defineProps({
-  name: String,
+  color: String,
+  size: Number,
 });
 
 const numberGlyphs = [...Array(10).keys()].map((n) => ({
@@ -18,22 +17,11 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs);
 </script>
 
 <template>
-  <div class="space-y-2">
-    <div class="qgrid grid gap-2">
-      <NumGridItem
-        v-for="g in allGlyphs"
-        :glyph="g"
-        color="#fff"
-        id="num_{{g.identifier}}"
-      />
-    </div>
-    <div class="qgrid grid gap-2">
-      <NumGridItem
-        v-for="g in allGlyphs"
-        :glyph="g"
-        color="#f00"
-        id="num_{{g.identifier}}"
-      />
+  <div class="qgrid grid gap-2">
+    <div v-for="glyph in allGlyphs" class="border border-gray-300 bg-gray-100">
+      <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+        <text :font-size="size" :fill="color" text-anchor="middle" dominant-baseline="central" x="50%" y="50%">{{ glyph.char }}</text>
+      </svg>
     </div>
   </div>
 </template>
@@ -41,5 +29,10 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs);
 <style scoped>
 .qgrid {
   grid-template-columns: repeat(13, 64px);
+}
+
+svg text {
+  font-weight: bold;
+  /*fill: red;*/
 }
 </style>
