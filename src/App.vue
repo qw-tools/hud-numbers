@@ -62,7 +62,9 @@ import FontPreload from "./components/FontPreload.vue";</script>
       </div>
     </div>
 
-    <div class="text-center mt-4 text-sky-800">ⓘ click a glyph to download.</div>
+    <div class="text-center mt-4 text-sky-800">
+      <strong>ⓘ click a glyph to download</strong>, and save into <span class="bg-gray-200 text-black text-sm p-1">/qw/textures/wad/</span>
+    </div>
 
   </div>
 </template>
