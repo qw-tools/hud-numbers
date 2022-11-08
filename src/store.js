@@ -3,9 +3,13 @@ import { reactive } from "vue";
 const defaultGlyphFontSize = "64";
 const fontNames = [
   "Alfa Slab One",
+  "Azeret Mono",
+  "Bevan",
   "Bungee",
-  "Bungee Inline",
   "Londrina Shadow",
+  "Luckiest Guy",
+  "Passion One",
+  "Spicy Rice",
   "Righteous",
   "Ultra",
   "Zen Dots",
