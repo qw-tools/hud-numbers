@@ -26,6 +26,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
       <Glyph :numType="numType"
              :color="store[`${props.numType}Color`]"
              :char="glyph.char"
+             :identifier="glyph.identifier"
              :fontFamily="store.glyphs.fontFamily"
              :fontSize="store.glyphs.fontSize"
              :offsetX="store.glyphs.offsetX"

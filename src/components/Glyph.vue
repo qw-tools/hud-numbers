@@ -4,6 +4,7 @@ import { saveAs } from "file-saver";
 
 const props = defineProps({
   char: String,
+  identifier: String,
   color: String,
   numType: String,
   fontFamily: String,
@@ -13,7 +14,7 @@ const props = defineProps({
   drawCrosshair: Boolean,
 });
 
-const id = `${props.numType}_${props.char}`;
+const id = `${props.numType}_${props.identifier}`;
 let canvas = null;
 let ctx = null;
 
