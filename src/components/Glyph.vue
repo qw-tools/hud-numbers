@@ -1,5 +1,4 @@
 <script setup>
-import { store } from "../store.js";
 import { onMounted, onUpdated } from "vue";
 import { saveAs } from "file-saver";
 
