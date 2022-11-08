@@ -28,7 +28,8 @@ import FontPreload from "./components/FontPreload.vue";</script>
         </div>
 
         <div class="flex ml-6 space-x-2 items-center">
-          <strong>vertical offset</strong> <input v-model.lazy="store.glyphs.offsetY" type="number" class="app-input w-16" min="-32" max="32">px
+          <strong>offset</strong> (x,y) <input v-model.lazy="store.glyphs.offsetX" type="number" class="app-input w-14" min="-32" max="32"><input
+            v-model.lazy="store.glyphs.offsetY" type="number" class="app-input w-14" min="-32" max="32"> px
         </div>
 
         <div class="ml-auto">

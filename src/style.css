@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .app-input {
-    @apply border rounded border-gray-300 p-2 bg-white shadow mx-4;
+    @apply border rounded border-gray-300 px-2 py-1 bg-white shadow mx-4;
 }
