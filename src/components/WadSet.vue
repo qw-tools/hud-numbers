@@ -4,7 +4,7 @@ import GlyphGrid from "./GlyphGrid.vue";
 import { computed } from "vue";
 
 defineProps({
-  color: String,
+  numType: String,
   size: Number,
 })
 
@@ -17,10 +17,10 @@ const colorInputStyle = computed(() => ({
 <template>
   <div class="flex items-center">
     <div class="mr-4">
-      <input type="color" v-model="color" :style="colorInputStyle" />
+      <input type="color" v-model="store[`${numType}Color`]" :style="colorInputStyle" />
     </div>
     <div class="grow">
-      <GlyphGrid :size="size" :color="color" />
+      <GlyphGrid :size="size" :color="store[`${numType}Color`]" />
     </div>
   </div>
 </template>

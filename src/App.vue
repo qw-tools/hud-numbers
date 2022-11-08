@@ -25,8 +25,8 @@ import WadSet from "./components/WadSet.vue";
     <hr class="my-6" />
 
     <div class="space-y-2">
-      <WadSet :size="parseInt(store.glyphs.size)" :color="store.numColor" />
-      <WadSet :size="parseInt(store.glyphs.size)" :color="store.anumColor" />
+      <WadSet :size="parseInt(store.glyphs.size)" numType="num" />
+      <WadSet :size="parseInt(store.glyphs.size)" numType="anum" />
     </div>
 
   </div>
