@@ -8,6 +8,8 @@ const props = defineProps({
   numType: String,
   fontFamily: String,
   fontSize: String,
+  offsetX: Number,
+  offsetY: Number,
   drawCrosshair: Boolean,
 });
 
@@ -24,7 +26,7 @@ const renderCanvas = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.font = `${props.fontSize}px "${props.fontFamily}"`;
   ctx.fillStyle = props.color;
-  ctx.fillText(props.char, canvas.width / 2, canvas.height / 2);
+  ctx.fillText(props.char, props.offsetX + (canvas.width / 2), props.offsetY + (canvas.height / 2));
 
   //console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
 

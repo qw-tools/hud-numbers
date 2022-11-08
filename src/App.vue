@@ -27,8 +27,14 @@ import FontPreload from "./components/FontPreload.vue";</script>
           <input v-model.lazy="store.glyphs.fontSize" type="range" min="48" step="8" max="96" class="mr-2"> <span>{{ store.glyphs.fontSize }}px</span>
         </div>
 
+        <div class="flex ml-6 space-x-2 items-center">
+          <strong>vertical offset</strong> <input v-model.lazy="store.glyphs.offsetY" type="number" class="app-input w-16" min="-32" max="32">px
+        </div>
+
         <div class="ml-auto">
-          <label class="cursor-pointer"><input type="checkbox" v-model="store.drawCrosshair" /> Draw center helper</label>
+          <label class="cursor-pointer">
+            <input type="checkbox" v-model="store.drawCrosshair" /> Draw center helper
+          </label>
         </div>
       </div>
     </div>

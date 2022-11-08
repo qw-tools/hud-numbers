@@ -16,18 +16,20 @@ const specialGlyphs = [
   { char: "-", identifier: "minus", type: "nonNumber" },
   { char: "/", identifier: "slash", type: "nonNumber" },
 ];
-const allGlyphs = numberGlyphs.concat(specialGlyphs);
+const allGlyphs = numberGlyphs.concat(specialGlyphs).slice(0,3);
 
 </script>
 
 <template>
   <div class="qgrid grid gap-2">
     <div v-for="glyph in allGlyphs" class="border border-2 bg-gray-100 hover:border-green-600">
-      <Glyph :char="glyph.char"
-             :numType="numType"
+      <Glyph :numType="numType"
              :color="store[`${props.numType}Color`]"
+             :char="glyph.char"
              :fontFamily="store.glyphs.fontFamily"
              :fontSize="store.glyphs.fontSize"
+             :offsetX="store.glyphs.offsetX"
+             :offsetY="store.glyphs.offsetY"
              :drawCrosshair="store.drawCrosshair" />
     </div>
   </div>

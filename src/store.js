@@ -18,10 +18,8 @@ export const store = reactive({
   glyphs: {
     fontFamily: fontNames[0],
     fontSize: defaultGlyphFontSize,
-    offset: {
-      x: 0,
-      y: 0,
-    }
+    offsetX: 0,
+    offsetY: 0,
   },
   numColor: "#000000",
   anumColor: "#ff0000",
