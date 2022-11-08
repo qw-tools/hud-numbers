@@ -97,11 +97,17 @@ import FontPreload from "./components/FontPreload.vue";
       </div>
     </div>
 
-    <div class="mt-2 ml-16 mr-auto">
-      <label class="block text-center w-14">
-        <input type="color" class="w-8 h-8" v-model.lazy="store.bgColor" />
-        <br />
-        <code class="text-xs">{{ store.bgColor }}</code>
+    <div class="mt-4 ml-16 mr-auto">
+      <label class="flex items-center space-x-2">
+        <div class="block text-center w-14">
+          <input type="color" class="w-8 h-8" v-model.lazy="store.bgColor" />
+          <br />
+          <code class="text-xs">{{ store.bgColor }}</code>
+        </div>
+        <div>
+          <strong>Preview background</strong><br />
+          <span class="text-xs">ⓘ Not visible on download.</span>
+        </div>
       </label>
     </div>
     <div class="text-center mt-4 text-sky-800">
