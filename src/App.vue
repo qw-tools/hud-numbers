@@ -13,8 +13,8 @@ import WadSet from "./components/WadSet.vue";
         <div>
           <GoogleFontSelect />
         </div>
-        <div class="flex space-x-2">
-          <input v-model="store.glyphs.size" type="range" min="48" step="8" max="192"> <span>{{ store.glyphs.size }}px</span>
+        <div class="flex ml-2">
+          <input v-model="store.glyphs.size" type="range" min="48" step="8" max="192" class="mr-2"> <span>{{ store.glyphs.size }}px</span>
         </div>
         <div class="ml-auto">
           <GoogleFontPageLink :fontFamily="store.glyphs.fontFamily" />
