@@ -5,22 +5,21 @@ import { computed } from "vue";
 
 defineProps({
   numType: String,
-  size: Number,
 })
 
 const colorInputStyle = computed(() => ({
-  height: store.glyphContainerSize,
-  width: store.glyphContainerSize,
+  height: `${store.glyphContainerSize}px`,
+  width: `${store.glyphContainerSize}px`,
 }))
 
 </script>
 <template>
-  <div class="flex items-center">
+  <div class="flex">
     <div class="mr-4">
-      <input type="color" v-model="store[`${numType}Color`]" :style="colorInputStyle" />
+      <input type="color" v-model.lazy="store[`${numType}Color`]" :style="colorInputStyle" />
     </div>
     <div class="grow">
-      <GlyphGrid :size="size" :color="store[`${numType}Color`]" />
+      <GlyphGrid :numType="numType" />
     </div>
   </div>
 </template>

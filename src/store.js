@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 
-const defaultGlyphSize = 128;
+const defaultGlyphFontSize = "80";
 const fontNames = [
   "Alfa Slab One",
   "Bungee",
@@ -13,11 +13,12 @@ const fontNames = [
 ];
 
 export const store = reactive({
+  drawCrosshair: true,
   fontNames,
-  glyphContainerSize: "64px",
+  glyphContainerSize: "64",
   glyphs: {
     fontFamily: fontNames[0],
-    size: defaultGlyphSize,
+    fontSize: defaultGlyphFontSize,
   },
   numColor: "#000000",
   anumColor: "#ff0000",
