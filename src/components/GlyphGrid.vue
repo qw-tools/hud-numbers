@@ -16,7 +16,7 @@ const specialGlyphs = [
   { char: "-", identifier: "minus", type: "nonNumber" },
   { char: "/", identifier: "slash", type: "nonNumber" },
 ];
-const allGlyphs = numberGlyphs.concat(specialGlyphs).slice(0,3);
+const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
 
 </script>
 
