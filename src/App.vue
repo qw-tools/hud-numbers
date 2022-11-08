@@ -42,7 +42,6 @@ import FontPreload from "./components/FontPreload.vue";</script>
     <hr class="my-6" />
 
     <div class="space-y-2">
-
       <div class="flex">
         <div class="mr-4">
           <input type="color" v-model.lazy="store.numColor" class="w-8 h-8" />
@@ -60,6 +59,8 @@ import FontPreload from "./components/FontPreload.vue";</script>
           <GlyphGrid numType="anum" />
         </div>
       </div>
+
+      <div class="text-center">(click to download)</div>
     </div>
 
   </div>
