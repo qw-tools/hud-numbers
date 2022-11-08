@@ -23,6 +23,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs);
       <NumGridItem
         v-for="g in allGlyphs"
         :glyph="g"
+        color="#fff"
         id="num_{{g.identifier}}"
       />
     </div>
@@ -30,6 +31,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs);
       <NumGridItem
         v-for="g in allGlyphs"
         :glyph="g"
+        color="#f00"
         id="num_{{g.identifier}}"
       />
     </div>

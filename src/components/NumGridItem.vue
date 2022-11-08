@@ -2,12 +2,14 @@
 import { store } from "./../store.js";
 import { computed } from "vue";
 
-defineProps({
+const props = defineProps({
   glyph: Object,
+  color: String,
 });
 
 const styles = computed(() => ({
   fontFamily: store.fontName,
+  color: props.color,
 }));
 </script>
 
@@ -21,13 +23,13 @@ const styles = computed(() => ({
 
 <style scoped>
 .text-stroke {
-  color: white;
-  /*text-shadow: 1px 1px #558ABB;
+  text-shadow: 1px 1px #666;
+  /*color: white;*/
   /*-webkit-text-fill-color: white;*/
   /*-webkit-text-stroke-width: 1px;*/
   /*-webkit-text-stroke-color: red;*/
-  background: -webkit-linear-gradient(#fff, #ccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /*background: -webkit-linear-gradient(#fff, #ccc);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
 }
 </style>

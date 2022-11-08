@@ -6,8 +6,8 @@ import NumGrid from "./components/NumGrid.vue";
 
 <template>
   <div class="max-w-5xl mx-auto">
-    <div>
-      Font:
+    <div class="my-4">
+      <strong>Font:</strong>&nbsp;
       <GoogleFontSelector />
     </div>
     <div>
@@ -16,11 +16,11 @@ import NumGrid from "./components/NumGrid.vue";
 
     <hr class="my-6" />
 
-    <h1>Glyphs</h1>
+    <h1 class="font-bold my-4">Glyphs</h1>
     <NumGrid />
     <hr class="my-6" />
 
-    <h1>Preview</h1>
+    <h1 class="font-bold">In game preview</h1>
     TODO
   </div>
 </template>
