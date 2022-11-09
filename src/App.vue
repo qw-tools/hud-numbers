@@ -76,7 +76,7 @@ import FontPreload from "./components/FontPreload.vue";
           <label>
             <input type="checkbox" v-model="store.drawCrosshair" />
             <strong>Show center helper</strong><br />
-            <span class="text-xs">ⓘ Not visible on download.</span>
+            <span class="text-xs">ⓘ Not included in download.</span>
           </label>
         </div>
       </div>
@@ -145,7 +145,7 @@ import FontPreload from "./components/FontPreload.vue";
         </div>
         <div>
           <strong>Preview background</strong><br />
-          <span class="text-xs">ⓘ Not visible on download.</span>
+          <span class="text-xs">ⓘ Not included in download.</span>
         </div>
       </label>
     </div>
