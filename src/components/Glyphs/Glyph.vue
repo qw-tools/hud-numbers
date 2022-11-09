@@ -1,9 +1,6 @@
 <script setup>
-import { glyphSize } from "../store.js";
 import { onMounted, onUpdated } from "vue";
 import { saveAs } from "file-saver";
-
-const shadowColor = "#000000";
 
 const props = defineProps({
   char: String,
@@ -13,7 +10,9 @@ const props = defineProps({
   numType: String,
   fontFamily: String,
   fontSize: String,
+  shadowColor: String,
   shadowSize: Number,
+  size: Number,
   offsetX: Number,
   offsetY: Number,
 });
@@ -43,7 +42,7 @@ const renderCanvas = () => {
 
   // "shadow"
   if (props.shadowSize > 0) {
-    ctx.fillStyle = shadowColor;
+    ctx.fillStyle = props.shadowColor;
 
     for (let i = 0; i < props.shadowSize; i++) {
       ctx.fillText(props.char, pos.x + i, pos.y + i);
@@ -79,8 +78,6 @@ const renderCanvas = () => {
 
   // text
   ctx.fillText(props.char, pos.x, pos.y);
-
-  //console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
 };
 
 function sleep(time) {
@@ -88,13 +85,11 @@ function sleep(time) {
 }
 
 onMounted(() => {
-  sleep(500).then(() => {
-    canvas = document.getElementById(id);
-    ctx = canvas.getContext("2d");
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    renderCanvas();
-  });
+  canvas = document.getElementById(id);
+  ctx = canvas.getContext("2d");
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  renderCanvas();
 });
 
 onUpdated(renderCanvas);
@@ -107,7 +102,7 @@ const download = () => {
 </script>
 
 <template>
-  <canvas :width="glyphSize" :height="glyphSize" :id="id" @click="download" />
+  <canvas :width="props.size" :height="props.size" :id="id" @click="download" />
 </template>
 
 <style scoped>

@@ -1,7 +1,6 @@
 import { reactive } from "vue";
 
-export const glyphSize = 128;
-
+export const fontLoadTimeout = 500;
 export const fontNames = [
   "Aldrich",
   "Alfa Slab One",
@@ -26,19 +25,23 @@ export const fontNames = [
   "Ultra",
   "Vast Shadow",
   "Wallpoet",
-  "Zen Dots", 
+  "Zen Dots",
 ];
 
 export const store = reactive({
+  fontsLoaded: false,
   drawCrosshair: false,
   glyphs: {
     fontFamily: fontNames[0],
     fontSize: "120",
     shadowSize: 4,
+    shadowColor: "#000000",
+    size: 128,
     offsetX: 0,
     offsetY: 0,
   },
-  bgColor: "#444444",
+  centerHelperColor: "#00ff00",
+  previewBgColor: "#444444",
   numColorTop: "#ffffff",
   numColorBottom: "#aaaaaa",
   anumColorTop: "#ff0000",

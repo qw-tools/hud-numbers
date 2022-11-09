@@ -1,7 +1,11 @@
 <script setup>
-import { glyphSize } from "../store.js";
 import { v4 as uuidv4 } from "uuid";
 import { onMounted } from "vue";
+
+const props = defineProps({
+  size: Number,
+  color: String,
+});
 
 const id = uuidv4();
 let canvas = null;
@@ -20,7 +24,7 @@ const render = () => {
   ctx.lineTo(center.x, canvas.height);
   ctx.moveTo(0, center.y);
   ctx.lineTo(canvas.width, center.y);
-  ctx.strokeStyle = "#00ff00";
+  ctx.strokeStyle = props.color;
   ctx.stroke();
 };
 
@@ -33,9 +37,9 @@ onMounted(() => {
 
 <template>
   <canvas
-    :width="glyphSize"
-    :height="glyphSize"
+    :width="props.size"
+    :height="props.size"
     :id="id"
-    :style="`margin-bottom: -${glyphSize}px`"
+    :style="`margin-bottom: -${props.size}px`"
   />
 </template>

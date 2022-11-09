@@ -1,9 +1,9 @@
 <script setup>
+import { fontNameToSlug } from "./util.js";
+
 defineProps({
   fontFamily: String,
 });
-
-const fontNameToSlug = (name) => name.replaceAll(" ", "+");
 </script>
 
 <template>
@@ -14,5 +14,3 @@ const fontNameToSlug = (name) => name.replaceAll(" ", "+");
     <strong>{{ fontFamily }}</strong> on Google Fonts &#8599;
   </a>
 </template>
-
-<style scoped></style>

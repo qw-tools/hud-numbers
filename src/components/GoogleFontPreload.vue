@@ -1,7 +1,15 @@
 <script setup>
-import { fontNames } from "../store.js";
+import { fontLoadTimeout, fontNames, store } from "../store.js";
+import { sleep } from "./util.js";
+import { onMounted } from "vue";
 
 const fontNameToSlug = (name) => name.replaceAll(" ", "+");
+
+onMounted(() => {
+  sleep(fontLoadTimeout).then(() => {
+    store.fontsLoaded = true;
+  });
+});
 </script>
 
 <template>
@@ -12,12 +20,12 @@ const fontNameToSlug = (name) => name.replaceAll(" ", "+");
       )}&display=block`"
       rel="stylesheet"
     />
-    <div class="goAway" :style="{ fontFamily: name }">hello</div>
+    <div class="hideElement" :style="{ fontFamily: name }">hello</div>
   </div>
 </template>
 
 <style>
-.goAway {
+.hideElement {
   position: absolute;
   top: -999px;
 }

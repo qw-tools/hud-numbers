@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.app-input {
-    @apply border rounded border-gray-300 px-2 py-1 bg-white shadow mx-4;
+select,
+input[type=number] {
+    @apply border rounded border-gray-300 mx-1 px-1 py-0.5 bg-white shadow;
 }
 
 input[type=checkbox] {
@@ -11,6 +12,27 @@ input[type=checkbox] {
 }
 
 label,
-input[type="color"] {
+input[type="color"],
+select {
     @apply cursor-pointer;
+}
+
+input[type="color"] {
+    @apply w-8 h-8;
+}
+
+label:hover {
+    @apply text-sky-600;
+}
+
+label:hover code {
+    font-weight: bold;
+}
+
+.debug {
+    border: 1px solid red;
+}
+
+.debug > * {
+    border: 1px solid blue;
 }

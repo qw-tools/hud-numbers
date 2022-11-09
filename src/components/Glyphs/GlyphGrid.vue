@@ -1,5 +1,5 @@
 <script setup>
-import { glyphSize, store } from "../store.js";
+import { store } from "../../store.js";
 import Glyph from "./Glyph.vue";
 import GlyphCrosshair from "./GlyphCrosshair.vue";
 
@@ -23,15 +23,21 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
 <template>
   <div
     class="grid"
-    :style="` grid-template-columns: repeat(auto-fit, ${glyphSize + 2 * 2}px);`"
+    :style="` grid-template-columns: repeat(auto-fit, ${
+      store.glyphs.size + 2 * 2
+    }px);`"
   >
     <div
       v-for="glyph in allGlyphs"
       class="border-2 hover:border-sky-600 hover:border-sky-600 hover:bg-sky-100"
       :title="`Download ${numType}_${glyph.identifier}.png`"
-      :style="`background-color: ${store.bgColor}`"
+      :style="`background-color: ${store.previewBgColor}`"
     >
-      <GlyphCrosshair v-if="store.drawCrosshair" />
+      <GlyphCrosshair
+        v-if="store.drawCrosshair"
+        :size="store.glyphs.size"
+        :color="store.centerHelperColor"
+      />
       <Glyph
         :numType="numType"
         :colorTop="store[`${props.numType}ColorTop`]"
@@ -40,9 +46,11 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
         :identifier="glyph.identifier"
         :fontFamily="store.glyphs.fontFamily"
         :fontSize="store.glyphs.fontSize"
+        :shadowColor="store.glyphs.shadowColor"
         :shadowSize="store.glyphs.shadowSize"
         :offsetX="store.glyphs.offsetX"
         :offsetY="store.glyphs.offsetY"
+        :size="store.glyphs.size"
       />
     </div>
   </div>
