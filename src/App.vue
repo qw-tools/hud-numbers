@@ -110,8 +110,8 @@ import FontPreload from "./components/FontPreload.vue";
       </div>
     </div>
 
-    <div class="mt-4 ml-16 mr-auto">
-      <label class="flex items-center space-x-2">
+    <div class="mt-4 ml-16">
+      <label class="flex items-center space-x-2 w-64">
         <div class="block text-center w-14">
           <input type="color" class="w-8 h-8" v-model.lazy="store.bgColor" />
           <br />
