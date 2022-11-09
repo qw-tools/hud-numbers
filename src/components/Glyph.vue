@@ -49,7 +49,7 @@ onMounted(() => {
   });
 });
 
-onUpdated(() => renderCanvas(props.drawCrosshair));
+onUpdated(renderCanvas);
 
 const download = () => {
   canvas.toBlob(function (blob) {
@@ -62,7 +62,7 @@ const download = () => {
   <canvas width="64" height="64" :id="id" @click="download" />
 </template>
 
-<style>
+<style scoped>
 canvas {
   cursor: pointer;
 }

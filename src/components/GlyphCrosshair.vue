@@ -36,7 +36,6 @@ onMounted(() => {
 
 <style scoped>
 canvas {
-  fill: red;
-  margin-top: -64px;
+  margin-bottom: -64px;
 }
 </style>

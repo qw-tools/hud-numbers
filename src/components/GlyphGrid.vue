@@ -27,6 +27,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
       class="border-2 hover:border-sky-600 hover:border-sky-600 hover:bg-sky-100"
       :style="`background-color: ${store.bgColor}`"
     >
+      <GlyphCrosshair v-if="store.drawCrosshair" />
       <Glyph
         :numType="numType"
         :color="store[`${props.numType}Color`]"
@@ -37,7 +38,6 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
         :offsetX="store.glyphs.offsetX"
         :offsetY="store.glyphs.offsetY"
       />
-      <GlyphCrosshair v-if="store.drawCrosshair" />
     </div>
   </div>
 </template>
