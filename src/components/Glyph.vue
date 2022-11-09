@@ -3,10 +3,13 @@ import { glyphSize } from "../store.js";
 import { onMounted, onUpdated } from "vue";
 import { saveAs } from "file-saver";
 
+const shadowColor = "#000000";
+
 const props = defineProps({
   char: String,
   identifier: String,
-  color: String,
+  colorTop: String,
+  colorBottom: String,
   numType: String,
   fontFamily: String,
   fontSize: String,
@@ -35,16 +38,24 @@ const renderCanvas = () => {
 
   // "shadow"
   if (props.shadowSize > 0) {
-    console.log(props.shadowSize);
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = shadowColor;
 
     for (let i = 0; i < props.shadowSize; i++) {
       ctx.fillText(props.char, pos.x + i, pos.y + i);
     }
   }
 
+  // color(s)
+  if (props.colorTop === props.colorBottom) {
+    ctx.fillStyle = props.colorTop;
+  } else {
+    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    gradient.addColorStop(0.0, props.colorTop);
+    gradient.addColorStop(1.0, props.colorBottom);
+    ctx.fillStyle = gradient;
+  }
+
   // text
-  ctx.fillStyle = props.color;
   ctx.fillText(props.char, pos.x, pos.y);
 
   //console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);

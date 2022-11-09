@@ -85,11 +85,24 @@ import FontPreload from "./components/FontPreload.vue";
     <hr class="my-4" />
 
     <div class="flex">
-      <div class="mr-4">
+      <div class="mr-4 mt-2">
         <label class="block text-center w-14">
-          <input type="color" v-model.lazy="store.numColor" class="w-8 h-8" />
+          <input
+            type="color"
+            v-model.lazy="store.numColorTop"
+            class="w-8 h-8"
+          />
           <br />
-          <code class="text-xs">{{ store.numColor }}</code>
+          <code class="text-xs">{{ store.numColorTop }}</code>
+        </label>
+        <label class="block text-center w-14">
+          <input
+            type="color"
+            v-model.lazy="store.numColorBottom"
+            class="w-8 h-8"
+          />
+          <br />
+          <code class="text-xs">{{ store.numColorBottom }}</code>
         </label>
       </div>
       <div class="grow">
@@ -98,11 +111,24 @@ import FontPreload from "./components/FontPreload.vue";
     </div>
 
     <div class="flex mt-2">
-      <div class="mr-4">
+      <div class="mr-4 mt-2">
         <label class="block text-center w-14">
-          <input type="color" v-model.lazy="store.anumColor" class="w-8 h-8" />
+          <input
+            type="color"
+            v-model.lazy="store.anumColorTop"
+            class="w-8 h-8"
+          />
           <br />
-          <code class="text-xs">{{ store.anumColor }}</code>
+          <code class="text-xs">{{ store.anumColorTop }}</code>
+        </label>
+        <label class="block text-center w-14">
+          <input
+            type="color"
+            v-model.lazy="store.anumColorBottom"
+            class="w-8 h-8"
+          />
+          <br />
+          <code class="text-xs">{{ store.anumColorBottom }}</code>
         </label>
       </div>
       <div class="grow">

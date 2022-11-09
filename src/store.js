@@ -26,6 +26,8 @@ export const store = reactive({
     offsetY: 0,
   },
   bgColor: "#444444",
-  numColor: "#ffffff",
-  anumColor: "#ff0000",
+  numColorTop: "#ffffff",
+  numColorBottom: "#aaaaaa",
+  anumColorTop: "#ff0000",
+  anumColorBottom: "#aa0000",
 });

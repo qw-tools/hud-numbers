@@ -34,7 +34,8 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
       <GlyphCrosshair v-if="store.drawCrosshair" />
       <Glyph
         :numType="numType"
-        :color="store[`${props.numType}Color`]"
+        :colorTop="store[`${props.numType}ColorTop`]"
+        :colorBottom="store[`${props.numType}ColorBottom`]"
         :char="glyph.char"
         :identifier="glyph.identifier"
         :fontFamily="store.glyphs.fontFamily"
