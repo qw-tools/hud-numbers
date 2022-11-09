@@ -22,7 +22,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
 
 <template>
   <div
-    class="grid gap-2"
+    class="grid"
     :style="` grid-template-columns: repeat(auto-fit, ${glyphSize + 2 * 2}px);`"
   >
     <div
