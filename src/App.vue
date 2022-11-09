@@ -34,8 +34,8 @@ import FontPreload from "./components/FontPreload.vue";
             v-model.lazy="store.glyphs.fontSize"
             type="range"
             min="48"
-            step="4"
-            max="96"
+            step="8"
+            max="200"
             class="w-24 mr-2"
           />
           <span>{{ store.glyphs.fontSize }}px</span>

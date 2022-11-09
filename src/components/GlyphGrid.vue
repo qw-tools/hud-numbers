@@ -1,5 +1,5 @@
 <script setup>
-import { store } from "../store.js";
+import { glyphSize, store } from "../store.js";
 import Glyph from "./Glyph.vue";
 import GlyphCrosshair from "./GlyphCrosshair.vue";
 
@@ -21,7 +21,10 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
 </script>
 
 <template>
-  <div class="qgrid grid gap-2">
+  <div
+    class="grid gap-2"
+    :style="` grid-template-columns: repeat(auto-fit, ${glyphSize + 2 * 2}px);`"
+  >
     <div
       v-for="glyph in allGlyphs"
       class="border-2 hover:border-sky-600 hover:border-sky-600 hover:bg-sky-100"
@@ -41,9 +44,3 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
     </div>
   </div>
 </template>
-
-<style scoped>
-.qgrid {
-  grid-template-columns: repeat(13, 68px);
-}
-</style>

@@ -1,4 +1,5 @@
 <script setup>
+import { glyphSize } from "../store.js";
 import { v4 as uuidv4 } from "uuid";
 import { onMounted } from "vue";
 
@@ -31,11 +32,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas width="64" height="64" :id="id" />
+  <canvas
+    :width="glyphSize"
+    :height="glyphSize"
+    :id="id"
+    :style="`margin-bottom: -${glyphSize}px`"
+  />
 </template>
-
-<style scoped>
-canvas {
-  margin-bottom: -64px;
-}
-</style>

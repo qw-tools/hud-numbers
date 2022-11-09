@@ -1,4 +1,5 @@
 <script setup>
+import { glyphSize } from "../store.js";
 import { onMounted, onUpdated } from "vue";
 import { saveAs } from "file-saver";
 
@@ -59,7 +60,7 @@ const download = () => {
 </script>
 
 <template>
-  <canvas width="64" height="64" :id="id" @click="download" />
+  <canvas :width="glyphSize" :height="glyphSize" :id="id" @click="download" />
 </template>
 
 <style scoped>

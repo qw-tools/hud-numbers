@@ -1,5 +1,5 @@
 <script setup>
-import { store } from "./../store.js";
+import { store, fontNames } from "./../store.js";
 
 defineProps({
   name: String,
@@ -8,6 +8,6 @@ defineProps({
 
 <template>
   <select v-model="store.glyphs.fontFamily" class="app-input">
-    <option v-for="name in store.fontNames">{{ name }}</option>
+    <option v-for="name in fontNames">{{ name }}</option>
   </select>
 </template>

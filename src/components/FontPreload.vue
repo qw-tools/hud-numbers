@@ -1,11 +1,11 @@
 <script setup>
-import { store } from "../store.js";
+import { fontNames } from "../store.js";
 
 const fontNameToSlug = (name) => name.replaceAll(" ", "+");
 </script>
 
 <template>
-  <div v-for="name in store.fontNames">
+  <div v-for="name in fontNames">
     <link
       :href="`https://fonts.googleapis.com/css2?family=${fontNameToSlug(
         name
