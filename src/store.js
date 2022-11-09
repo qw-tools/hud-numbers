@@ -21,6 +21,7 @@ export const store = reactive({
   glyphs: {
     fontFamily: fontNames[0],
     fontSize: "120",
+    shadowSize: 4,
     offsetX: 0,
     offsetY: 0,
   },

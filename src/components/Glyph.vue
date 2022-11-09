@@ -10,6 +10,7 @@ const props = defineProps({
   numType: String,
   fontFamily: String,
   fontSize: String,
+  shadowSize: Number,
   offsetX: Number,
   offsetY: Number,
 });
@@ -26,12 +27,25 @@ const renderCanvas = () => {
   ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.font = `${props.fontSize}px "${props.fontFamily}"`;
+
+  const pos = {
+    x: props.offsetX + canvas.width / 2,
+    y: props.offsetY + canvas.height / 2,
+  };
+
+  // "shadow"
+  if (props.shadowSize > 0) {
+    console.log(props.shadowSize);
+    ctx.fillStyle = "#000000";
+
+    for (let i = 0; i < props.shadowSize; i++) {
+      ctx.fillText(props.char, pos.x + i, pos.y + i);
+    }
+  }
+
+  // text
   ctx.fillStyle = props.color;
-  ctx.fillText(
-    props.char,
-    props.offsetX + canvas.width / 2,
-    props.offsetY + canvas.height / 2
-  );
+  ctx.fillText(props.char, pos.x, pos.y);
 
   //console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
 };

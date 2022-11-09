@@ -42,6 +42,17 @@ import FontPreload from "./components/FontPreload.vue";
         </div>
 
         <div class="flex ml-6 space-x-2 items-center">
+          <strong>Shadow size</strong>
+          <input
+            v-model="store.glyphs.shadowSize"
+            type="number"
+            class="app-input w-14"
+            min="0"
+            max="24"
+          />
+        </div>
+
+        <div class="flex ml-6 space-x-2 items-center">
           <strong>Offset</strong> <span class="text-gray-500">(x,y)</span>
           <input
             v-model.lazy="store.glyphs.offsetX"
