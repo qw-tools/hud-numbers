@@ -42,14 +42,15 @@ import FontPreload from "./components/FontPreload.vue";
         </div>
 
         <div class="flex ml-6 space-x-2 items-center">
-          <strong>Shadow size</strong>
+          <strong>Shadow</strong>
           <input
             v-model="store.glyphs.shadowSize"
             type="number"
-            class="app-input w-14"
+            class="app-input w-12"
             min="0"
             max="24"
           />
+          <span class="text-gray-500">px</span>
         </div>
 
         <div class="flex ml-6 space-x-2 items-center">
