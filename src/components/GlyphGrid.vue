@@ -28,6 +28,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
     <div
       v-for="glyph in allGlyphs"
       class="border-2 hover:border-sky-600 hover:border-sky-600 hover:bg-sky-100"
+      :title="`Download ${numType}_${glyph.identifier}.png`"
       :style="`background-color: ${store.bgColor}`"
     >
       <GlyphCrosshair v-if="store.drawCrosshair" />
