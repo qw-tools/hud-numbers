@@ -41,7 +41,7 @@ export const store = reactive({
     offsetY: 0,
   },
   centerHelperColor: "#00ff00",
-  previewBgColor: "#444444",
+  previewBgColor: "#777777",
   numColorTop: "#ffffff",
   numColorBottom: "#aaaaaa",
   anumColorTop: "#ff0000",
