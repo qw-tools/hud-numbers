@@ -31,9 +31,14 @@ const renderCanvas = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.font = `${props.fontSize}px "${props.fontFamily}"`;
 
+  const center = {
+    x: canvas.width / 2,
+    y: canvas.height / 2,
+  };
+
   const pos = {
-    x: props.offsetX + canvas.width / 2,
-    y: props.offsetY + canvas.height / 2,
+    x: center.x + props.offsetX,
+    y: center.y + props.offsetY,
   };
 
   // "shadow"
@@ -49,7 +54,24 @@ const renderCanvas = () => {
   if (props.colorTop === props.colorBottom) {
     ctx.fillStyle = props.colorTop;
   } else {
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    const approxHeight = 0.9 * props.fontSize;
+
+    const bbox = {
+      top: pos.y - props.fontSize / 2,
+      height: approxHeight,
+    };
+
+    // ctx.beginPath();
+    // ctx.strokeStyle = "#ffff00";
+    // ctx.rect(0, bbox.top, canvas.width, bbox.height);
+    // ctx.stroke();
+
+    const gradient = ctx.createLinearGradient(
+      0,
+      bbox.top,
+      0,
+      bbox.top + bbox.height
+    );
     gradient.addColorStop(0.0, props.colorTop);
     gradient.addColorStop(1.0, props.colorBottom);
     ctx.fillStyle = gradient;
