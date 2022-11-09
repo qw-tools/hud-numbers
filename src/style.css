@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 .app-input {
-  @apply border rounded border-gray-300 px-2 py-1 bg-white shadow mx-4;
+    @apply border rounded border-gray-300 px-2 py-1 bg-white shadow mx-4;
+}
+
+input[type=checkbox] {
+    @apply mr-1;
 }
 
 label,
 input[type="color"] {
-  @apply cursor-pointer;
+    @apply cursor-pointer;
 }

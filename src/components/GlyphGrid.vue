@@ -1,6 +1,7 @@
 <script setup>
 import { store } from "../store.js";
 import Glyph from "./Glyph.vue";
+import GlyphCrosshair from "./GlyphCrosshair.vue";
 
 const props = defineProps({
   numType: String,
@@ -23,7 +24,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
   <div class="qgrid grid gap-2">
     <div
       v-for="glyph in allGlyphs"
-      class="border border-2 hover:border-sky-600 hover:bg-sky-100"
+      class="border-2 hover:border-sky-600 hover:border-sky-600 hover:bg-sky-100"
       :style="`background-color: ${store.bgColor}`"
     >
       <Glyph
@@ -35,14 +36,14 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
         :fontSize="store.glyphs.fontSize"
         :offsetX="store.glyphs.offsetX"
         :offsetY="store.glyphs.offsetY"
-        :drawCrosshair="store.drawCrosshair"
       />
+      <GlyphCrosshair v-if="store.drawCrosshair" />
     </div>
   </div>
 </template>
 
 <style scoped>
 .qgrid {
-  grid-template-columns: repeat(13, 64px);
+  grid-template-columns: repeat(13, 68px);
 }
 </style>

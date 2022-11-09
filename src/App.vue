@@ -9,7 +9,7 @@ import FontPreload from "./components/FontPreload.vue";
 <template>
   <FontPreload />
 
-  <div class="max-w-5xl mx-auto mt-4">
+  <div class="max-w-6xl mx-auto mt-4">
     <div class="font-bold flex items-center">
       <div class="font-bold">QuakeWorld WAD Numbers generator</div>
       <div class="ml-auto text-gray-600 text-xs">
@@ -60,10 +60,11 @@ import FontPreload from "./components/FontPreload.vue";
           &nbsp; px
         </div>
 
-        <div class="ml-auto">
+        <div class="ml-6">
           <label>
-            <input type="checkbox" v-model="store.drawCrosshair" /> Draw center
-            helper
+            <input type="checkbox" v-model="store.drawCrosshair" />
+            <strong>Show center helper</strong><br />
+            <span class="text-xs">ⓘ Not visible on download.</span>
           </label>
         </div>
       </div>

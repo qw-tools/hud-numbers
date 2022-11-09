@@ -11,14 +11,13 @@ const props = defineProps({
   fontSize: String,
   offsetX: Number,
   offsetY: Number,
-  drawCrosshair: Boolean,
 });
 
 const id = `${props.numType}_${props.identifier}`;
 let canvas = null;
 let ctx = null;
 
-const renderCanvas = (drawCrosshair) => {
+const renderCanvas = () => {
   if (!canvas) {
     return;
   }
@@ -34,20 +33,6 @@ const renderCanvas = (drawCrosshair) => {
   );
 
   //console.log("renderCanvas", id, canvas.width, canvas.height, ctx.font);
-
-  if (drawCrosshair) {
-    drawCrosshairOnCanvas(ctx);
-  }
-};
-
-const drawCrosshairOnCanvas = (ctx) => {
-  const center = { x: canvas.width / 2 - 1, y: canvas.height / 2 - 1 };
-  ctx.beginPath();
-  ctx.moveTo(center.x, 0);
-  ctx.lineTo(center.x, canvas.height - 1);
-  ctx.moveTo(0, center.y);
-  ctx.lineTo(canvas.width - 1, center.y);
-  ctx.stroke();
 };
 
 function sleep(time) {
@@ -60,18 +45,13 @@ onMounted(() => {
     ctx = canvas.getContext("2d");
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    renderCanvas(props.drawCrosshair);
+    renderCanvas();
   });
 });
 
 onUpdated(() => renderCanvas(props.drawCrosshair));
 
-const handleDownloadClick = () => {
-  renderCanvas(false);
-  sleep(50).then(downloadCanvas);
-};
-
-const downloadCanvas = () => {
+const download = () => {
   canvas.toBlob(function (blob) {
     saveAs(blob, `${id}.png`);
   });
@@ -79,7 +59,7 @@ const downloadCanvas = () => {
 </script>
 
 <template>
-  <canvas width="64" height="64" :id="id" @click="handleDownloadClick" />
+  <canvas width="64" height="64" :id="id" @click="download" />
 </template>
 
 <style>
