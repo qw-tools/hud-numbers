@@ -6,6 +6,7 @@ export const fontNames = [
   "Alfa Slab One",
   "Azeret Mono",
   "Bevan",
+  "Black Ops One",
   "Bungee",
   "Londrina Shadow",
   "Luckiest Guy",
