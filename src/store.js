@@ -3,11 +3,13 @@ import { reactive } from "vue";
 export const glyphSize = 128;
 
 export const fontNames = [
+  "Aldrich",
   "Alfa Slab One",
   "Azeret Mono",
   "Bevan",
   "Black Ops One",
   "Bungee",
+  "Cinzel Decorative",
   "Londrina Shadow",
   "Luckiest Guy",
   "Passion One",
