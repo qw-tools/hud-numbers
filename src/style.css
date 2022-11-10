@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    code {
+        font-family: monospace;
+    }
+}
+
 select,
 input[type=number] {
     @apply border rounded border-gray-300 mx-1 px-1 py-0.5 bg-white shadow;
