@@ -2,10 +2,11 @@
 import AppHeader from "./AppHeader.vue";
 import AppFooter from "./AppFooter.vue";
 import Editor from "./Editor/Editor.vue";
-import GoogleFontPreload from "./GoogleFontPreload.vue";</script>
+import GoogleFontPreloader from "./GoogleFontPreloader.vue";
+</script>
 
 <template>
-  <GoogleFontPreload />
+  <GoogleFontPreloader />
   <AppHeader />
   <Editor />
   <AppFooter />

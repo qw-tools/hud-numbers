@@ -1,26 +1,19 @@
 <script setup>
-import { fontLoadTimeout, fontNames, store } from "../store.js";
-import { sleep } from "./util.js";
-import { onMounted } from "vue";
 
-const fontNameToSlug = (name) => name.replaceAll(" ", "+");
+import { fontNameToUrl } from "./util.js";
 
-onMounted(() => {
-  sleep(fontLoadTimeout).then(() => {
-    store.fontsLoaded = true;
-  });
+defineProps({
+  fontFamily: String,
 });
-</script>
 
+</script>
 <template>
-  <div v-for="name in fontNames">
+  <div>
     <link
-      :href="`https://fonts.googleapis.com/css2?family=${fontNameToSlug(
-        name
-      )}&display=block`"
-      rel="stylesheet"
+        :href="fontNameToUrl(fontFamily)"
+        rel="stylesheet"
     />
-    <div class="hideElement" :style="{ fontFamily: name }">hello</div>
+    <div :style="{ fontFamily: fontFamily }" class="hideElement">hello</div>
   </div>
 </template>
 

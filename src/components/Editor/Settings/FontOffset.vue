@@ -1,8 +1,8 @@
 <script setup>
-import { store } from "../../../store.js";</script>
-
+import { store } from "../../../store.js";
+</script>
 <template>
-  <div>
+  <div class="flex items-center">
     <strong>Offset</strong> <span class="text-gray-500">(x,y)</span>
     <input
         v-model.lazy="store.glyphs.offsetX"

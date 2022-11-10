@@ -29,6 +29,7 @@ export const fontNames = [
 ];
 
 export const store = reactive({
+  fontNames,
   fontsLoaded: false,
   drawCrosshair: false,
   glyphs: {
