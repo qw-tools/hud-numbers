@@ -34,7 +34,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
       :style="`background-color: ${store.previewBgColor}`"
     >
       <GlyphCrosshair
-        v-if="store.drawCrosshair"
+        v-show="store.drawCrosshair"
         :size="store.glyphs.size"
         :color="store.centerHelperColor"
       />
