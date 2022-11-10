@@ -2,11 +2,11 @@
 import GoogleFontPageLink from "./GoogleFontPageLink.vue";
 </script>
 <template>
-  <div class="space-y-4">
+  <div class="container mx-auto my-4">
     <div class="text-center text-xs space-x-2">
       <span
       >Created by
-        <a class="text-sky-600" href="https://vikpe.org">vikpe</a></span
+        <a class="text-sky-600" href="https://vikpe.org">vikpe</a> a.k.a. &quot;XantoM&quot;</span
       >
       <span class="text-gray-400">|</span>
       <GoogleFontPageLink />
