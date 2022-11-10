@@ -46,7 +46,7 @@ const handleAddFont = async () => {
 <template>
   <div>
     <div class="flex" style="width: 240px">
-      <input v-model.lazy="model.customFont" :disabled="model.isLoadingFont" class="border-red-400 w-32" type="text" />
+      <input v-model.lazy.trim="model.customFont" :disabled="model.isLoadingFont" class="border-red-400 w-32" type="text" />
       <button :disabled="model.isLoadingFont" class="bg-gray-200 rounded text-xs px-2 border border-gray-300" @click="handleAddFont">+ Add font</button>
     </div>
     <div class="text-xs mt-2">
