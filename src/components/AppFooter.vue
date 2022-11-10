@@ -1,14 +1,18 @@
-<script setup></script>
+<script setup>
+import GoogleFontPageLink from "./GoogleFontPageLink.vue";
+</script>
 <template>
   <div class="space-y-4">
     <div class="text-center text-xs space-x-2">
       <span
-        >Created by
-        <a href="https://vikpe.org" class="text-sky-600">vikpe</a></span
+      >Created by
+        <a class="text-sky-600" href="https://vikpe.org">vikpe</a></span
       >
       <span class="text-gray-400">|</span>
-      <a href="https://github.com/vikpe/qwnum" class="text-sky-700"
-        >Source on GitHub &#8599;</a
+      <GoogleFontPageLink />
+      <span class="text-gray-400">|</span>
+      <a class="text-sky-700" href="https://github.com/vikpe/qwnum"
+      >Source on GitHub &#8599;</a
       >
     </div>
   </div>
