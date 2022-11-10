@@ -3,7 +3,7 @@ import ColorNum from "./Settings/ColorNum.vue";
 import ColorAnum from "./Settings/ColorAnum.vue";
 import GlyphGrid from "./../Glyphs/GlyphGrid.vue";</script>
 <template>
-  <div class="container mx-auto my-4 space-y-4">
+  <div class="container my-4 space-y-4">
     <div class="flex">
       <div class="px-2 mr-4 rounded-md">
         <ColorNum />

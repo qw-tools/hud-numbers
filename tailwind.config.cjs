@@ -5,6 +5,13 @@ module.exports = {
     "./src/**/*.{js,jsx,vue}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1em',
+        sm: '0',
+      }
+    },
     extend: {},
   },
   plugins: [],

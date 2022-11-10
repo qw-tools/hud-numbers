@@ -2,7 +2,7 @@
 import GoogleFontPageLink from "./GoogleFontPageLink.vue";
 </script>
 <template>
-  <div class="container mx-auto my-4">
+  <div class="container my-4">
     <div class="text-center text-xs space-x-2">
       <span
       >Created by

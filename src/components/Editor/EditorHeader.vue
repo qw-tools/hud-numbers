@@ -5,7 +5,7 @@ import FontSize from "./Settings/FontSize.vue";
 import FontShadow from "./Settings/FontShadow.vue";</script>
 <template>
   <div class="bg-white shadow py-3">
-    <div class="container mx-auto">
+    <div class="container">
       <div class="flex items-center space-x-8">
         <div class="flex space-x-4">
           <FontFamilySelect />

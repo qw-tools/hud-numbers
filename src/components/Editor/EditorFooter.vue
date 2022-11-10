@@ -3,7 +3,7 @@ import CenterHelperToggle from "./Settings/CenterCrosshair.vue";
 import PreviewBackground from "./Settings/PreviewBackground.vue";
 </script>
 <template>
-  <div class="container mx-auto my-4">
+  <div class="container my-4">
     <div class="flex items-center my-8 space-x-12">
       <span class="text-xs">* Not included in download.</span>
       <CenterHelperToggle />

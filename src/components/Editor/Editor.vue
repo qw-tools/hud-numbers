@@ -8,7 +8,7 @@ import LoadingIndicator from "./LoadingIndicator.vue";
 <template>
 
   <div class="bg-gray-100 border-b">
-    <div v-if="!store.fontsLoaded" class="container mx-auto">
+    <div v-if="!store.fontsLoaded" class="container">
       <LoadingIndicator />
     </div>
 
