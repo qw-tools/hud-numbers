@@ -6,7 +6,10 @@ export const sleep = (time) => {
 };
 
 export const fontNameToSlug = (name) => name.replaceAll(" ", "+");
-export const fontNameToUrl = name => `https://fonts.googleapis.com/css2?family=${fontNameToSlug(name)}&display=block`;
+export const fontNameToUrl = (name) => {
+  const fontNameSlug = fontNameToSlug(name);
+  return `https://fonts.googleapis.com/css2?family=${fontNameSlug}&display=block`;
+};
 
 export const fontExist = async (name) => await urlExist(fontNameToUrl(name));
 
