@@ -15,7 +15,13 @@ export const fontExist = async (name) => await urlExist(fontNameToUrl(name));
 
 export const downloadGlyph = (id) => downloadCanvas(id, `${id}.png`);
 
-export const downloadCanvas = (id, filename) => {
-  const canvas = document.getElementById(id);
-  canvas.toBlob((blob) => saveAs(blob, filename));
+export const downloadCanvas = async (id, filename) =>
+  await canvasToBlob(id).then((blob) => saveAs(blob, filename));
+
+export const canvasToBlob = async (id) => {
+  return new Promise((resolve) => {
+    document.getElementById(id).toBlob((blob) => {
+      return resolve(blob);
+    });
+  });
 };
