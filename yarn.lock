@@ -133,6 +133,11 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.45.tgz#a3fffa7489eafff38d984e23d0236e230c818bc2"
   integrity sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==
 
+"@zip.js/zip.js@^2.6.52":
+  version "2.6.52"
+  resolved "https://registry.yarnpkg.com/@zip.js/zip.js/-/zip.js-2.6.52.tgz#7a05b2680580771b8b246e1101a119638e3f8206"
+  integrity sha512-PMOV6c0wwR7+KHhzcoinyPUnGst9RmxLesSLmCsMKVkKp67KoYaHuLg8HG8B3mYxvpk2GDDrmaGaMfX3UxA7Gg==
+
 abort-controller@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-3.0.0.tgz#eaf54d53b62bae4138e809ca225c8439a6efb392"
