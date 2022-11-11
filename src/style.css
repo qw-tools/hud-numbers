@@ -2,15 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* main */
 @layer base {
     html {
         font-family: Roboto, sans-serif;
     }
+
     code {
         font-family: monospace;
     }
 }
 
+/* forms */
 select,
 input[type=number],
 input[type=text] {
@@ -39,10 +42,29 @@ label:hover code {
     font-weight: bold;
 }
 
+
+/* debug */
 .debug {
     border: 1px solid red;
 }
 
 .debug > * {
     border: 1px solid blue;
+}
+
+
+/* animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-duration: 500ms;
+    animation-name: fadeIn;
 }
