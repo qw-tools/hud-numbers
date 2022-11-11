@@ -91,14 +91,20 @@ onMounted(() => {
 onUpdated(renderCanvas);
 
 const download = () => {
-  canvas.toBlob(function (blob) {
+  canvas.toBlob((blob) => {
     saveAs(blob, `${id}.png`);
   });
 };
 </script>
 
 <template>
-  <canvas :width="props.size" :height="props.size" :id="id" @click="download" />
+  <canvas
+    class="glyph-canvas"
+    :width="props.size"
+    :height="props.size"
+    :id="id"
+    @click="download"
+  />
 </template>
 
 <style scoped>
