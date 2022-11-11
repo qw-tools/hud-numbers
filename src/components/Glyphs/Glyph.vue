@@ -80,10 +80,6 @@ const renderCanvas = () => {
   ctx.fillText(props.char, pos.x, pos.y);
 };
 
-function sleep(time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
-
 onMounted(() => {
   canvas = document.getElementById(id);
   ctx = canvas.getContext("2d");
