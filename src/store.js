@@ -28,6 +28,36 @@ export const fontNames = [
   "Zen Dots",
 ];
 
+export const gradientStyles = [
+  {
+    stops: [
+      { pos: 0.0, index: 0 },
+      { pos: 1.0, index: 1 },
+    ],
+  },
+  {
+    stops: [
+      { pos: 0, index: 0 },
+      { pos: 0.5, index: 1 },
+    ],
+  },
+  {
+    stops: [
+      { pos: 0, index: 1 },
+      { pos: 0.5, index: 0 },
+      { pos: 0.5, index: 1 },
+      { pos: 1.0, index: 1 },
+    ],
+  },
+  {
+    stops: [
+      { pos: 0.0, index: 0 },
+      { pos: 0.5, index: 1 },
+      { pos: 1.0, index: 0 },
+    ],
+  },
+];
+
 export const store = reactive({
   fontNames,
   fontsLoaded: false,
@@ -35,6 +65,7 @@ export const store = reactive({
   glyphs: {
     fontFamily: fontNames[0],
     fontSize: "120",
+    gradientStops: gradientStyles[0].stops,
     shadowSize: 4,
     shadowColor: "#000000",
     size: 128,

@@ -16,6 +16,7 @@
     "@zip.js/zip.js": "^2.6.52",
     "autoprefixer": "^10.4.13",
     "file-saver": "^2.0.5",
+    "lodash.isequal": "^4.5.0",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.2.3",

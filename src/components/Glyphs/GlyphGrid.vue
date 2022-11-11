@@ -46,6 +46,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
         :identifier="glyph.identifier"
         :fontFamily="store.glyphs.fontFamily"
         :fontSize="store.glyphs.fontSize"
+        :gradientStops="store.glyphs.gradientStops"
         :shadowColor="store.glyphs.shadowColor"
         :shadowSize="store.glyphs.shadowSize"
         :offsetX="store.glyphs.offsetX"

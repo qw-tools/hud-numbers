@@ -10,6 +10,7 @@ const props = defineProps({
   numType: String,
   fontFamily: String,
   fontSize: String,
+  gradientStops: Array,
   shadowColor: String,
   shadowSize: Number,
   size: Number,
@@ -26,18 +27,17 @@ const renderCanvas = () => {
     return;
   }
 
-  ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.font = `${props.fontSize}px "${props.fontFamily}"`;
 
-  const center = {
+  const canvasCenter = {
     x: canvas.width / 2,
     y: canvas.height / 2,
   };
 
-  const pos = {
-    x: center.x + props.offsetX,
-    y: center.y + props.offsetY,
+  const glyphCenter = {
+    x: canvasCenter.x + props.offsetX,
+    y: canvasCenter.y + props.offsetY,
   };
 
   // "shadow"
@@ -45,39 +45,41 @@ const renderCanvas = () => {
     ctx.fillStyle = props.shadowColor;
 
     for (let i = 0; i < props.shadowSize; i++) {
-      ctx.fillText(props.char, pos.x + i, pos.y + i);
+      ctx.fillText(props.char, glyphCenter.x + i, glyphCenter.y + i);
     }
   }
 
   // color(s)
   if (props.colorTop === props.colorBottom) {
     ctx.fillStyle = props.colorTop;
-  } else {
-    const approxHeight = 0.9 * props.fontSize;
-
-    const bbox = {
-      top: pos.y - props.fontSize / 2,
-      height: approxHeight,
-    };
-
-    // ctx.beginPath();
-    // ctx.strokeStyle = "#ffff00";
-    // ctx.rect(0, bbox.top, canvas.width, bbox.height);
-    // ctx.stroke();
-
-    const gradient = ctx.createLinearGradient(
-      0,
-      bbox.top,
-      0,
-      bbox.top + bbox.height
-    );
-    gradient.addColorStop(0.0, props.colorTop);
-    gradient.addColorStop(1.0, props.colorBottom);
-    ctx.fillStyle = gradient;
+    ctx.fillText(props.char, glyphCenter.x, glyphCenter.y);
+    return;
   }
 
+  const metrics = ctx.measureText(props.char);
+  const bbox = {
+    top: glyphCenter.y - metrics.actualBoundingBoxAscent,
+    bottom: glyphCenter.y + metrics.actualBoundingBoxDescent,
+    height: 0,
+  };
+
+  // debug: bounding box
+  // ctx.beginPath();
+  // ctx.strokeStyle = "#ffff00";
+  // ctx.rect(0, bbox.top, canvas.width, bbox.bottom - bbox.top);
+  // ctx.stroke();
+
   // text
-  ctx.fillText(props.char, pos.x, pos.y);
+  const gradient = ctx.createLinearGradient(0, bbox.top, 0, bbox.bottom);
+  for (let i = 0; i < props.gradientStops.length; i++) {
+    const color = props.gradientStops[i].index
+      ? props.colorBottom
+      : props.colorTop;
+    gradient.addColorStop(props.gradientStops[i].pos, color);
+  }
+
+  ctx.fillStyle = gradient;
+  ctx.fillText(props.char, glyphCenter.x, glyphCenter.y);
 };
 
 onMounted(() => {
