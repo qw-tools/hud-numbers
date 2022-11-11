@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, onUpdated } from "vue";
-import { saveAs } from "file-saver";
+import { downloadGlyph } from "../util";
 
 const props = defineProps({
   char: String,
@@ -89,12 +89,6 @@ onMounted(() => {
 });
 
 onUpdated(renderCanvas);
-
-const download = () => {
-  canvas.toBlob((blob) => {
-    saveAs(blob, `${id}.png`);
-  });
-};
 </script>
 
 <template>
@@ -103,7 +97,7 @@ const download = () => {
     :width="props.size"
     :height="props.size"
     :id="id"
-    @click="download"
+    @click="() => downloadGlyph(id)"
   />
 </template>
 
