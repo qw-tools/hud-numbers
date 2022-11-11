@@ -6,7 +6,7 @@ import EditorHeader from "./EditorHeader.vue";
 import LoadingIndicator from "./LoadingIndicator.vue";
 </script>
 <template>
-  <div class="bg-gray-100 border-b">
+  <div class="bg-gray-100 border-b border-gray-300">
     <div v-if="!store.fontsLoaded" class="container">
       <LoadingIndicator />
     </div>
