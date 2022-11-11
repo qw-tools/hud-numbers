@@ -2,6 +2,21 @@ import urlExist from "url-exist";
 import { saveAs } from "file-saver";
 import { BlobReader, BlobWriter, ZipWriter } from "@zip.js/zip.js";
 
+export const slugify = (text) => {
+  return text
+    .toString() // Cast to string (optional)
+    .normalize("NFKD") // The normalize() using NFKD method returns the Unicode Normalization Form of a given string.
+    .toLowerCase() // Convert the string to lowercase letters
+    .trim() // Remove whitespace from both sides of a string (optional)
+    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+    .replace(/_/g, "-") // Replace _ with -
+    .replace(/--+/g, "-") // Replace multiple - with single -
+    .replace(/-$/g, ""); // Remove trailing -
+};
+
+export const fileSlug = (filename) => slugify(filename).replaceAll("-", "_");
+
 export const sleep = (time) => {
   return new Promise((resolve) => setTimeout(resolve, time));
 };
@@ -40,5 +55,5 @@ export const downloadCanvases = async (canvases, filename) => {
 
   await Promise.all(zipOperations);
   const zipBlob = await zipWriter.close();
-  saveAs(zipBlob, `${filename}.zip`);
+  saveAs(zipBlob, `${fileSlug(filename)}.zip`);
 };

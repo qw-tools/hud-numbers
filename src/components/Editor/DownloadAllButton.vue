@@ -1,9 +1,10 @@
 <script setup>
+import { store } from "../../store.js";
 import { downloadCanvases } from "../util.js";
 
 const handleClick = async () => {
   const canvases = document.getElementsByClassName("glyph-canvas");
-  await downloadCanvases(canvases, "qwnum");
+  await downloadCanvases(canvases, `qwnum_${store.glyphs.fontFamily}`);
 };
 </script>
 
