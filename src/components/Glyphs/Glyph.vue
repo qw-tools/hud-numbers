@@ -1,24 +1,26 @@
 <script setup>
+import { default as t } from "../types.js";
+import { v4 as uuidv4 } from "uuid";
 import { onMounted, onUpdated } from "vue";
-import { downloadGlyph } from "../util";
 
 const props = defineProps({
-  char: String,
-  identifier: String,
-  colorTop: String,
-  colorBottom: String,
-  numType: String,
-  fontFamily: String,
-  fontSize: String,
-  gradientStops: Array,
-  shadowColor: String,
-  shadowSize: Number,
-  size: Number,
-  offsetX: Number,
-  offsetY: Number,
+  id: t.string(uuidv4()),
+  char: t.string("0"),
+  colorTop: t.string("#ff0000"),
+  colorBottom: t.string("#00ffff"),
+  fontFamily: t.string("Aldrich"),
+  fontSize: t.string("48"),
+  gradientStops: t.array([
+    { pos: 0.0, index: 0 },
+    { pos: 1.0, index: 1 },
+  ]),
+  shadowColor: t.string("#000000"),
+  shadowSize: t.number(2),
+  size: t.number(64),
+  offsetX: t.number(0),
+  offsetY: t.number(0),
 });
 
-const id = `${props.numType}_${props.identifier}`;
 let canvas = null;
 let ctx = null;
 
@@ -83,7 +85,7 @@ const renderCanvas = () => {
 };
 
 onMounted(() => {
-  canvas = document.getElementById(id);
+  canvas = document.getElementById(props.id);
   ctx = canvas.getContext("2d");
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
@@ -95,16 +97,9 @@ onUpdated(renderCanvas);
 
 <template>
   <canvas
-    class="glyph-canvas"
+    :id="id"
     :width="props.size"
     :height="props.size"
-    :id="id"
-    @click="() => downloadGlyph(id)"
+    class="glyph-canvas"
   />
 </template>
-
-<style scoped>
-canvas {
-  cursor: pointer;
-}
-</style>
