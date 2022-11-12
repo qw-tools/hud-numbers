@@ -14,7 +14,6 @@ import LoadingIndicator from "./LoadingIndicator.vue";
     <div v-if="store.fontsLoaded" class="fadeIn">
       <EditorHeader />
       <EditorBody />
-      <hr class="my-8 container border-gray-300" />
       <EditorFooter />
     </div>
   </div>
