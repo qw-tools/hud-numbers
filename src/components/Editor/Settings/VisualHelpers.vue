@@ -1,6 +1,6 @@
 <script setup>
-import CenterCrosshair from "./Settings/CenterCrosshair.vue";
-import PreviewBackground from "./Settings/PreviewBackground.vue";
+import CenterCrosshair from "./CenterCrosshair.vue";
+import PreviewBackground from "./PreviewBackground.vue";
 </script>
 <template>
   <div>
