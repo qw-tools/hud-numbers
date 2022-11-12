@@ -10,7 +10,7 @@ const handleClick = async () => {
 
 <template>
   <button
-    class="bg-sky-600 hover:bg-sky-800 text-white rounded-md px-3 py-2 font-mono text-sm"
+    class="bg-gradient-to-b from-sky-500 to-sky-700 hover:from-sky-600 hover:to-sky-800 text-white rounded-md px-3 py-2 font-mono text-sm"
     @click="handleClick"
   >
     Download all
