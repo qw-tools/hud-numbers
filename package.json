@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
-    "@zip.js/zip.js": "^2.6.52",
+    "@zip.js/zip.js": "^2.6.54",
     "autoprefixer": "^10.4.13",
     "file-saver": "^2.0.5",
     "lodash.isequal": "^4.5.0",
