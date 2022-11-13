@@ -58,7 +58,7 @@ export const gradientStyles = [
   },
 ];
 
-export const store = reactive({
+export const getDefaultState = () => ({
   fontNames,
   fontsLoaded: false,
   drawCrosshair: false,
@@ -79,3 +79,14 @@ export const store = reactive({
   anumColorTop: "#ff0000",
   anumColorBottom: "#aa0000",
 });
+
+export const resetSettings = () => {
+  const preservedData = {
+    fontsLoaded: store.fontsLoaded,
+    fontNames: store.fontNames,
+  };
+
+  Object.assign(store, getDefaultState(), preservedData);
+};
+
+export const store = reactive(getDefaultState());
