@@ -30,9 +30,11 @@ const scenarios = [
   },
 ];
 
-const scale = 0.75;
-const glyphSize = 50;
-const defaultFontSize = 128;
+const screenshotScale = 0.75;
+const previewFontSize = 50;
+const previewActualFontSize = previewFontSize * screenshotScale;
+const editorDefaultFontSize = 128;
+const scaleFactor = previewActualFontSize / editorDefaultFontSize;
 
 let scenarioIndex = 0;
 
@@ -69,17 +71,18 @@ const data = reactive({
         <Glyph
           v-for="(char, charIndex) in data.scenario.armor.toString().split('')"
           :id="`armor-${charIndex}`"
-          :size="glyphSize"
+          :size="previewActualFontSize"
           :colorTop="store.numColors.top"
           :colorBottom="store.numColors.bottom"
           :fontFamily="store.glyphs.fontFamily"
           :shadowColor="store.glyphs.shadowColor"
-          :shadowSize="store.glyphs.shadowSize * scale"
+          :shadowSize="store.glyphs.shadowSize * scaleFactor"
           :gradientStops="store.glyphs.gradientStops"
-          :offsetX="store.glyphs.offsetX * scale"
-          :offsetY="store.glyphs.offsetY * scale"
+          :offsetX="store.glyphs.offsetX * scaleFactor"
+          :offsetY="store.glyphs.offsetY * scaleFactor"
           :fontSize="
-            (parseInt(store.glyphs.fontSize) / defaultFontSize) * glyphSize
+            (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
+            previewActualFontSize
           "
           :char="char"
         />
@@ -90,17 +93,18 @@ const data = reactive({
       <Glyph
         v-for="(char, charIndex) in data.scenario.health.toString().split('')"
         :id="`health-${charIndex}`"
-        :size="glyphSize"
+        :size="previewActualFontSize"
         :colorTop="store.numColors.top"
         :colorBottom="store.numColors.bottom"
         :fontFamily="store.glyphs.fontFamily"
         :shadowColor="store.glyphs.shadowColor"
-        :shadowSize="store.glyphs.shadowSize * scale"
+        :shadowSize="store.glyphs.shadowSize * scaleFactor"
         :gradientStops="store.glyphs.gradientStops"
-        :offsetX="store.glyphs.offsetX * scale"
-        :offsetY="store.glyphs.offsetY * scale"
+        :offsetX="store.glyphs.offsetX * scaleFactor"
+        :offsetY="store.glyphs.offsetY * scaleFactor"
         :fontSize="
-          (parseInt(store.glyphs.fontSize) / defaultFontSize) * glyphSize
+          (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
+          previewActualFontSize
         "
         :char="char"
       />
@@ -110,17 +114,18 @@ const data = reactive({
       <Glyph
         v-for="(char, charIndex) in data.scenario.ammo.toString().split('')"
         :id="`ammo-${charIndex}`"
-        :size="glyphSize"
+        :size="previewActualFontSize"
         :colorTop="store.numColors.top"
         :colorBottom="store.numColors.bottom"
         :fontFamily="store.glyphs.fontFamily"
         :shadowColor="store.glyphs.shadowColor"
-        :shadowSize="store.glyphs.shadowSize * scale"
+        :shadowSize="store.glyphs.shadowSize * scaleFactor"
         :gradientStops="store.glyphs.gradientStops"
-        :offsetX="store.glyphs.offsetX * scale"
-        :offsetY="store.glyphs.offsetY * scale"
+        :offsetX="store.glyphs.offsetX * scaleFactor"
+        :offsetY="store.glyphs.offsetY * scaleFactor"
         :fontSize="
-          (parseInt(store.glyphs.fontSize) / defaultFontSize) * glyphSize
+          (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
+          previewActualFontSize
         "
         :char="char"
       />
