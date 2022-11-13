@@ -23,12 +23,13 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
 
 <template>
   <div
-    class="grid justify-center"
-    :style="`grid-template-columns: repeat(auto-fit, ${store.glyphs.size}px); background-color: ${store.previewBgColor}`"
+    class="grid gap-[1px]"
+    :style="`grid-template-columns: repeat(auto-fit, ${store.glyphs.size}px);`"
   >
     <div
       v-for="glyph in allGlyphs"
       :title="`Download ${numType}_${glyph.identifier}.png`"
+      :style="`background-color: ${store.previewBgColor}`"
     >
       <GlyphCrosshair
         v-show="store.drawCrosshair"

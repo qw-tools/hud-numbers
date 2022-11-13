@@ -14,13 +14,13 @@ import DownloadInfo from "./DownloadInfo.vue";
 <template>
   <div class="container my-4">
     <div class="flex">
-      <div class="grow space-y-2" style="max-width: 982px">
-        <div class="ml-auto">
+      <div class="space-y-2" style="min-width: 860px">
+        <div class="flex justify-center bg-black py-1">
           <Preview />
         </div>
 
-        <div class="flex bg-gray-300 rounded-md">
-          <div class="mx-4">
+        <div class="flex bg-gray-300">
+          <div class="flex w-20 justify-center">
             <ColorNum />
           </div>
           <div class="flex-grow">
@@ -28,8 +28,8 @@ import DownloadInfo from "./DownloadInfo.vue";
           </div>
         </div>
 
-        <div class="flex bg-gray-300 rounded-md">
-          <div class="mx-4">
+        <div class="flex bg-gray-300">
+          <div class="flex w-20 justify-center">
             <ColorAnum />
           </div>
           <div class="flex-grow">
@@ -37,7 +37,7 @@ import DownloadInfo from "./DownloadInfo.vue";
           </div>
         </div>
 
-        <div class="ml-20" style="max-width: 990px">
+        <div>
           <DownloadInfo />
         </div>
       </div>
