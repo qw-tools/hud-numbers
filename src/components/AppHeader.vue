@@ -9,7 +9,7 @@
     <div class="container flex h-12 items-center text-white text-xs space-x-4">
       <span class="font-bold text-sm">QuakeWorld Graphics</span>
       <span class="text-gray-500">|</span>
-      <a href="#" class="text-amber-200 font-bold">HUD Numbers</a>
+      <span class="text-amber-200 font-bold">HUD Numbers</span>
       <!--      <span class="text-gray-500">|</span>-->
       <!--      <a href="#" class="text-sky-300">Player Skin</a>-->
       <!--      <span class="text-gray-500">|</span>-->
