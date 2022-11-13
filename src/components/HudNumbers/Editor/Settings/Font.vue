@@ -13,7 +13,7 @@ import CustomFontFamily from "./CustomFontFamily.vue";
         v-model.lazy="store.glyphs.fontSize"
         type="range"
         min="48"
-        step="8"
+        step="2"
         max="200"
         class="w-24 mr-2"
       />
