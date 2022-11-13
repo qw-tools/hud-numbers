@@ -74,10 +74,8 @@ export const getDefaultState = () => ({
   },
   centerHelperColor: "#00ff00",
   previewBgColor: "#777777",
-  numColorTop: "#ffffff",
-  numColorBottom: "#aaaaaa",
-  anumColorTop: "#ff0000",
-  anumColorBottom: "#aa0000",
+  numColors: { top: "#ffffff", bottom: "#aaaaaa" },
+  anumColors: { top: "#ff0000", bottom: "#aa0000" },
 });
 
 export const resetSettings = () => {

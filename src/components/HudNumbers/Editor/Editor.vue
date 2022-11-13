@@ -1,6 +1,5 @@
 <script setup>
-import ColorNum from "./Settings/ColorNum.vue";
-import ColorAnum from "./Settings/ColorAnum.vue";
+import { store } from "../../../store.js";
 import GlyphGrid from "../../Glyphs/GlyphGrid.vue";
 import Preview from "./Preview.vue";
 import Font from "./Settings/Font.vue";
@@ -10,6 +9,7 @@ import Reset from "./Settings/Reset.vue";
 import GradientStyle from "./Settings/GradientStyle.vue";
 import PreviewBackground from "./Settings/PreviewBackground.vue";
 import DownloadInfo from "./DownloadInfo.vue";
+import GradientColors from "./Settings/GradientColors.vue";
 </script>
 <template>
   <div class="container my-4">
@@ -20,20 +20,26 @@ import DownloadInfo from "./DownloadInfo.vue";
         </div>
 
         <div class="flex bg-gray-300">
-          <div class="flex w-20 justify-center">
-            <ColorNum />
+          <div class="flex w-20 justify-center mt-2">
+            <GradientColors
+              v-model:top.lazy="store.numColors.top"
+              v-model:bottom.lazy="store.numColors.bottom"
+            />
           </div>
           <div class="flex-grow">
-            <GlyphGrid numType="num" />
+            <GlyphGrid numType="num" :colors="store.numColors" />
           </div>
         </div>
 
         <div class="flex bg-gray-300">
-          <div class="flex w-20 justify-center">
-            <ColorAnum />
+          <div class="flex w-20 justify-center mt-2">
+            <GradientColors
+              v-model:top.lazy="store.anumColors.top"
+              v-model:bottom.lazy="store.anumColors.bottom"
+            />
           </div>
           <div class="flex-grow">
-            <GlyphGrid numType="anum" />
+            <GlyphGrid numType="anum" :colors="store.anumColors" />
           </div>
         </div>
 

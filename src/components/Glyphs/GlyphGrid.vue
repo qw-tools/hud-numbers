@@ -6,6 +6,7 @@ import GlyphCrosshair from "./GlyphCrosshair.vue";
 
 const props = defineProps({
   numType: String,
+  colors: Object,
 });
 
 const numberGlyphs = [...Array(10).keys()].map((n) => ({
@@ -39,8 +40,8 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
       <Glyph
         class="hover:bg-sky-600 cursor-pointer"
         :id="`${numType}_${glyph.identifier}`"
-        :colorTop="store[`${props.numType}ColorTop`]"
-        :colorBottom="store[`${props.numType}ColorBottom`]"
+        :colorTop="props.colors.top"
+        :colorBottom="props.colors.bottom"
         :char="glyph.char"
         :fontFamily="store.glyphs.fontFamily"
         :fontSize="store.glyphs.fontSize"
