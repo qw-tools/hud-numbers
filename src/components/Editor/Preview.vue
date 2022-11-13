@@ -82,6 +82,8 @@ const data = reactive({
             :shadowColor="store.glyphs.shadowColor"
             :shadowSize="store.glyphs.shadowSize * scale"
             :gradientStops="store.glyphs.gradientStops"
+            :offsetX="store.glyphs.offsetX * scale"
+            :offsetY="store.glyphs.offsetY * scale"
             fontSize="48"
             :char="char"
           />
@@ -99,6 +101,8 @@ const data = reactive({
           :shadowColor="store.glyphs.shadowColor"
           :shadowSize="store.glyphs.shadowSize * scale"
           :gradientStops="store.glyphs.gradientStops"
+          :offsetX="store.glyphs.offsetX * scale"
+          :offsetY="store.glyphs.offsetY * scale"
           fontSize="48"
           :char="char"
         />
@@ -115,6 +119,8 @@ const data = reactive({
           :shadowColor="store.glyphs.shadowColor"
           :shadowSize="store.glyphs.shadowSize * scale"
           :gradientStops="store.glyphs.gradientStops"
+          :offsetX="store.glyphs.offsetX * scale"
+          :offsetY="store.glyphs.offsetY * scale"
           fontSize="48"
           :char="char"
         />
