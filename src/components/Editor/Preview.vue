@@ -39,19 +39,19 @@ const data = reactive({
   scenario: scenarios[scenarioIndex],
 });
 
-const onPrev = () => {
-  if (0 === data.scenarioIndex) {
-    data.scenarioIndex = scenarios.length - 1;
-  } else {
-    data.scenarioIndex -= 1;
-  }
-  data.scenario = scenarios[data.scenarioIndex];
-};
-
-const onNext = () => {
-  data.scenarioIndex = (data.scenarioIndex + 1) % scenarios.length;
-  data.scenario = scenarios[data.scenarioIndex];
-};
+// const onPrev = () => {
+//   if (0 === data.scenarioIndex) {
+//     data.scenarioIndex = scenarios.length - 1;
+//   } else {
+//     data.scenarioIndex -= 1;
+//   }
+//   data.scenario = scenarios[data.scenarioIndex];
+// };
+//
+// const onNext = () => {
+//   data.scenarioIndex = (data.scenarioIndex + 1) % scenarios.length;
+//   data.scenario = scenarios[data.scenarioIndex];
+// };
 </script>
 <template>
   <div class="flex items-center justify-center">
@@ -65,7 +65,7 @@ const onNext = () => {
       :style="`
         width: 820px;
         height: 150px;
-        background: url(/assets/img/preview/${data.scenario.image}.jpg) no-repeat;
+        background: url(https://vikpe.org/qwnum/assets/img/preview/${data.scenario.image}.jpg) no-repeat;
       `"
     >
       <div style="margin-left: 104px; width: 150px">
