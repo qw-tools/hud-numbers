@@ -42,7 +42,7 @@ import DownloadInfo from "./DownloadInfo.vue";
         </div>
       </div>
 
-      <div class="bg-gray-200 mx-6 border-l"></div>
+      <div class="mx-6 border-l border-l-gray-300"></div>
 
       <div class="space-y-4" style="min-width: 220px; max-width: 320px">
         <div class="flex items-center">
