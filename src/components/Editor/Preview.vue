@@ -1,4 +1,5 @@
 <script setup>
+import { store } from "../../store.js";
 import { reactive } from "vue";
 import Glyph from "./../Glyphs/Glyph.vue";
 
@@ -29,6 +30,8 @@ const scenarios = [
   },
 ];
 
+const scale = 0.75;
+
 let scenarioIndex = 0;
 
 const data = reactive({
@@ -51,14 +54,14 @@ const onNext = () => {
 };
 </script>
 <template>
-  <div class="flex items-center grow">
-    <div class="grow text-center">
-      <button class="px-2 py-1 rounded bg-gray-400" @click="onPrev">
-        Prev {{ data.scenarioIndex }}
-      </button>
-    </div>
+  <div class="flex items-center justify-center">
+    <!--    <div class="grow text-center">-->
+    <!--      <button class="px-2 py-1 rounded bg-gray-400" @click="onPrev">-->
+    <!--        Prev-->
+    <!--      </button>-->
+    <!--    </div>-->
     <div
-      class="flex items-center debug"
+      class="flex items-center"
       :style="`
         width: 820px;
         height: 150px;
@@ -73,6 +76,12 @@ const onNext = () => {
               .split('')"
             :id="`armor-${charIndex}`"
             :size="50"
+            :colorTop="store.numColorTop"
+            :colorBottom="store.numColorBottom"
+            :fontFamily="store.glyphs.fontFamily"
+            :shadowColor="store.glyphs.shadowColor"
+            :shadowSize="store.glyphs.shadowSize * scale"
+            :gradientStops="store.glyphs.gradientStops"
             fontSize="48"
             :char="char"
           />
@@ -84,6 +93,12 @@ const onNext = () => {
           v-for="(char, charIndex) in data.scenario.health.toString().split('')"
           :id="`health-${charIndex}`"
           :size="50"
+          :colorTop="store.numColorTop"
+          :colorBottom="store.numColorBottom"
+          :fontFamily="store.glyphs.fontFamily"
+          :shadowColor="store.glyphs.shadowColor"
+          :shadowSize="store.glyphs.shadowSize * scale"
+          :gradientStops="store.glyphs.gradientStops"
           fontSize="48"
           :char="char"
         />
@@ -94,15 +109,21 @@ const onNext = () => {
           v-for="(char, charIndex) in data.scenario.ammo.toString().split('')"
           :id="`ammo-${charIndex}`"
           :size="50"
+          :colorTop="store.numColorTop"
+          :colorBottom="store.numColorBottom"
+          :fontFamily="store.glyphs.fontFamily"
+          :shadowColor="store.glyphs.shadowColor"
+          :shadowSize="store.glyphs.shadowSize * scale"
+          :gradientStops="store.glyphs.gradientStops"
           fontSize="48"
           :char="char"
         />
       </div>
     </div>
-    <div class="grow text-center">
-      <button class="px-2 py-1 rounded bg-gray-400" @click="onNext">
-        Next
-      </button>
-    </div>
+    <!--    <div class="grow text-center">-->
+    <!--      <button class="px-2 py-1 rounded bg-gray-400" @click="onNext">-->
+    <!--        Next-->
+    <!--      </button>-->
+    <!--    </div>-->
   </div>
 </template>

@@ -15,7 +15,7 @@ import DownloadInfo from "./DownloadInfo.vue";
   <div class="container my-4">
     <div class="flex">
       <div class="grow space-y-2" style="max-width: 982px">
-        <div class="flex">
+        <div class="ml-auto">
           <Preview />
         </div>
 
