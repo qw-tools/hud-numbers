@@ -64,7 +64,7 @@ export const getDefaultState = () => ({
   drawCrosshair: false,
   glyphs: {
     fontFamily: fontNames[0],
-    fontSize: "120",
+    fontSize: "128",
     gradientStops: gradientStyles[0].stops,
     shadowSize: 4,
     shadowColor: "#000000",
