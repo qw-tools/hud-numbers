@@ -9,7 +9,7 @@ const handleClick = (style) => {
 </script>
 <template>
   <div class="flex items-center">
-    <strong class="mr-1">Gradient style</strong>
+    <strong class="grow">Gradient style</strong>
 
     <div
       v-for="style in gradientStyles"

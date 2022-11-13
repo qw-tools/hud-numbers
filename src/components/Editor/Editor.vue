@@ -1,7 +1,6 @@
 <script setup>
 import { store } from "../../store.js";
 import EditorBody from "./EditorBody.vue";
-import EditorFooter from "./EditorFooter.vue";
 import EditorHeader from "./EditorHeader.vue";
 import LoadingIndicator from "./LoadingIndicator.vue";
 </script>
@@ -14,7 +13,6 @@ import LoadingIndicator from "./LoadingIndicator.vue";
     <div v-if="store.fontsLoaded" class="fadeIn">
       <EditorHeader />
       <EditorBody />
-      <EditorFooter />
     </div>
   </div>
 </template>

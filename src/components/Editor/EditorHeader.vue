@@ -1,22 +1,8 @@
-<script setup>
-import FontFamilySelect from "./Settings/FontFamily.vue";
-import FontOffset from "./Settings/FontOffset.vue";
-import FontSize from "./Settings/FontSize.vue";
-import FontShadow from "./Settings/FontShadow.vue";
-import GradientStyle from "./Settings/GradientStyle.vue";
-</script>
+<script setup></script>
 <template>
-  <div class="bg-white shadow py-3">
+  <div class="bg-white shadow py-4">
     <div class="container">
-      <div class="flex items-center space-x-8">
-        <div class="flex space-x-4">
-          <FontFamilySelect />
-          <FontSize />
-          <FontOffset />
-        </div>
-        <FontShadow />
-        <GradientStyle />
-      </div>
+      <div class="font-bold text-xl">HUD Numbers Generator</div>
     </div>
   </div>
 </template>

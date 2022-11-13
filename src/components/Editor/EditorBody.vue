@@ -1,23 +1,26 @@
 <script setup>
-import { store } from "../../store.js";
 import ColorNum from "./Settings/ColorNum.vue";
 import ColorAnum from "./Settings/ColorAnum.vue";
 import GlyphGrid from "./../Glyphs/GlyphGrid.vue";
-import Glyph from "../Glyphs/Glyph.vue";
-import VisualHelpers from "./Settings/VisualHelpers.vue";
-
-const previewChars = [
-  { id: "preview_1", char: "1" },
-  { id: "preview_2", char: "0" },
-  { id: "preview_3", char: "0" },
-];
+import Preview from "./Preview.vue";
+import Font from "./Settings/Font.vue";
+import Offset from "./Settings/Offset.vue";
+import FontShadow from "./Settings/Shadow.vue";
+import Reset from "./Settings/Reset.vue";
+import GradientStyle from "./Settings/GradientStyle.vue";
+import PreviewBackground from "./Settings/PreviewBackground.vue";
+import DownloadInfo from "./DownloadInfo.vue";
 </script>
 <template>
   <div class="container my-4">
     <div class="flex">
-      <div class="flex-grow">
+      <div class="grow space-y-2" style="max-width: 982px">
         <div class="flex">
-          <div class="px-2 mr-4 rounded-md">
+          <Preview />
+        </div>
+
+        <div class="flex bg-gray-300 rounded-md">
+          <div class="mx-4">
             <ColorNum />
           </div>
           <div class="flex-grow">
@@ -25,8 +28,8 @@ const previewChars = [
           </div>
         </div>
 
-        <div class="flex mt-2">
-          <div class="px-2 mr-4 rounded-md">
+        <div class="flex bg-gray-300 rounded-md">
+          <div class="mx-4">
             <ColorAnum />
           </div>
           <div class="flex-grow">
@@ -34,41 +37,33 @@ const previewChars = [
           </div>
         </div>
 
-        <div class="flex items-center justify-center ml-16 mt-6">
-          <VisualHelpers />
+        <div class="ml-20" style="max-width: 990px">
+          <DownloadInfo />
         </div>
       </div>
 
-      <div class="flex flex-col" style="width: 640px">
-        <div class="flex justify-center grow" style="width: 640px">
-          <div
-            class="flex shadow-md border-4 border-white rounded"
-            style="
-              width: 600px;
-              height: 400px;
-              background: url(/assets/img/screenshots/ezquake005.png);
-              background-size: cover;
-            "
-          >
-            <div
-              class="flex mt-auto"
-              style="margin-left: 322px; margin-bottom: 22px"
-            >
-              <Glyph
-                v-for="p in previewChars"
-                :id="p.id"
-                :char="p.char"
-                :fontSize="20"
-                :size="24"
-                :fontFamily="store.glyphs.fontFamily"
-                :colorTop="store.numColorTop"
-                :colorBottom="store.numColorBottom"
-                :gradientStops="store.glyphs.gradientStops"
-                :shadowColor="store.glyphs.shadowColor"
-                :offsetX="store.glyphs.offsetX"
-                :offsetY="store.glyphs.offsetY"
-              />
-            </div>
+      <div class="bg-gray-200 mx-6 border-l"></div>
+
+      <div class="space-y-4" style="min-width: 220px; max-width: 320px">
+        <div class="flex items-center">
+          <div class="text-lg font-bold">Settings</div>
+          <Reset />
+        </div>
+
+        <hr />
+        <Font />
+        <hr />
+        <Offset />
+        <hr />
+        <FontShadow />
+        <hr />
+        <GradientStyle />
+        <hr />
+        <PreviewBackground />
+        <hr />
+        <div>
+          <div class="mt-4 text-xs text-gray-500">
+            * not included in download.
           </div>
         </div>
       </div>

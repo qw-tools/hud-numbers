@@ -3,8 +3,9 @@ import { reactive } from "vue";
 import { fontExist, sleep } from "../../util.js";
 import { fontLoadTimeout, store } from "../../../store.js";
 
-const defaultMsg = '<a href="https://fonts.google.com/" class="text-sky-700">Find fonts on Google Fonts ↗</a>';
-const defaultMsgClass = ""
+const defaultMsg =
+  '<a href="https://fonts.google.com/" class="text-sky-700">Find fonts on Google Fonts ↗</a>';
+const defaultMsgClass = "";
 
 const model = reactive({
   customFont: "",
@@ -30,24 +31,34 @@ const handleAddFont = async () => {
 
     sleep(fontLoadTimeout).then(() => {
       store.glyphs.fontFamily = model.customFont;
-      model.msg = "Font added."
-      model.msgClass = "text-green-700"
+      model.msg = "Font added.";
+      model.msgClass = "text-green-700";
       model.customFont = "";
       model.isLoadingFont = false;
     });
   } else {
-    model.msg = "Font not found."
-    model.msgClass = "text-red-700"
+    model.msg = "Font not found.";
+    model.msgClass = "text-red-700";
     model.isLoadingFont = false;
   }
-}
-
+};
 </script>
 <template>
   <div>
-    <div class="flex" style="width: 240px">
-      <input v-model.lazy.trim="model.customFont" :disabled="model.isLoadingFont" class="border-red-400 w-32" type="text" />
-      <button :disabled="model.isLoadingFont" class="bg-gray-200 rounded text-xs px-2 border border-gray-300" @click="handleAddFont">+ Add font</button>
+    <div class="flex">
+      <input
+        v-model.lazy.trim="model.customFont"
+        :disabled="model.isLoadingFont"
+        class="border-red-400 w-32"
+        type="text"
+      />
+      <button
+        :disabled="model.isLoadingFont"
+        class="bg-gray-200 rounded text-xs px-2 border border-gray-300"
+        @click="handleAddFont"
+      >
+        + Add font
+      </button>
     </div>
     <div class="text-xs mt-2">
       <span :class="model.msgClass" v-html="model.msg" />
