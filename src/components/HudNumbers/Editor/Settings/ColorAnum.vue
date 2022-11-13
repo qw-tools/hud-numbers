@@ -1,5 +1,5 @@
 <script setup>
-import { store } from "../../../store.js";
+import { store } from "../../../../store.js";
 </script>
 <template>
   <div class="flex items-center" :style="`height: ${store.glyphs.size}px`">

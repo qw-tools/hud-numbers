@@ -1,5 +1,5 @@
 <script setup>
-import { store } from "../../../store.js";
+import { store } from "../../../../store.js";
 </script>
 <template>
   <label class="flex items-center text-xs">

@@ -1,6 +1,6 @@
 <script setup>
-import { store } from "../store.js";
-import { fontNameToCssSlug } from "./util.js";
+import { store } from "../../store.js";
+import { fontNameToCssSlug } from "../util.js";
 </script>
 
 <template>

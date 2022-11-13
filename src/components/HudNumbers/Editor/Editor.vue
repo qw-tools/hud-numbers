@@ -1,7 +1,7 @@
 <script setup>
 import ColorNum from "./Settings/ColorNum.vue";
 import ColorAnum from "./Settings/ColorAnum.vue";
-import GlyphGrid from "./../Glyphs/GlyphGrid.vue";
+import GlyphGrid from "../../Glyphs/GlyphGrid.vue";
 import Preview from "./Preview.vue";
 import Font from "./Settings/Font.vue";
 import Offset from "./Settings/Offset.vue";

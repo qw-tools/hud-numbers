@@ -1,8 +1,8 @@
 <script setup>
-import { fontLoadTimeout, store } from "../store.js";
-import { sleep } from "./util.js";
+import { fontLoadTimeout, store } from "../../store.js";
+import { sleep } from "../util.js";
 import { onMounted } from "vue";
-import GoogleFontPreload from "./GoogleFontPreload.vue";
+import GoogleFontPreload from "./FontPreload.vue";
 
 onMounted(() => {
   sleep(fontLoadTimeout).then(() => {
@@ -14,4 +14,3 @@ onMounted(() => {
 <template>
   <GoogleFontPreload v-for="name in store.fontNames" :fontFamily="name" />
 </template>
-

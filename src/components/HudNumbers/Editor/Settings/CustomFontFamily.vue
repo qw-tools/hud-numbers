@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from "vue";
-import { fontExist, sleep } from "../../util.js";
-import { fontLoadTimeout, store } from "../../../store.js";
+import { fontExist, sleep } from "../../../util.js";
+import { fontLoadTimeout, store } from "../../../../store.js";
 
 const defaultMsg =
   '<a href="https://fonts.google.com/" class="text-sky-700">Find fonts on Google Fonts ↗</a>';

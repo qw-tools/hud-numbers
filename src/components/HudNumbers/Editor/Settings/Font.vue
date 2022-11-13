@@ -1,5 +1,5 @@
 <script setup>
-import { store } from "../../../store.js";
+import { store } from "../../../../store.js";
 import CustomFontFamily from "./CustomFontFamily.vue";
 </script>
 <template>

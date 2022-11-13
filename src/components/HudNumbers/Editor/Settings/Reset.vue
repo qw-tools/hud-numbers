@@ -1,5 +1,5 @@
 <script setup>
-import { resetSettings } from "../../../store.js";
+import { resetSettings } from "../../../../store.js";
 </script>
 <template>
   <input

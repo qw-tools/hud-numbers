@@ -1,6 +1,6 @@
 <script setup>
-import { store } from "../../store.js";
-import { downloadCanvases } from "../util.js";
+import { store } from "../../../store.js";
+import { downloadCanvases } from "../../util.js";
 
 const handleClick = async () => {
   const canvases = document.getElementsByClassName("glyph-canvas");
