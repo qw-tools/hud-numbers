@@ -31,6 +31,8 @@ const scenarios = [
 ];
 
 const scale = 0.75;
+const glyphSize = 50;
+const defaultFontSize = 128;
 
 let scenarioIndex = 0;
 
@@ -67,7 +69,7 @@ const data = reactive({
         <Glyph
           v-for="(char, charIndex) in data.scenario.armor.toString().split('')"
           :id="`armor-${charIndex}`"
-          :size="50"
+          :size="glyphSize"
           :colorTop="store.numColors.top"
           :colorBottom="store.numColors.bottom"
           :fontFamily="store.glyphs.fontFamily"
@@ -76,7 +78,9 @@ const data = reactive({
           :gradientStops="store.glyphs.gradientStops"
           :offsetX="store.glyphs.offsetX * scale"
           :offsetY="store.glyphs.offsetY * scale"
-          fontSize="48"
+          :fontSize="
+            (parseInt(store.glyphs.fontSize) / defaultFontSize) * glyphSize
+          "
           :char="char"
         />
       </div>
@@ -86,7 +90,7 @@ const data = reactive({
       <Glyph
         v-for="(char, charIndex) in data.scenario.health.toString().split('')"
         :id="`health-${charIndex}`"
-        :size="50"
+        :size="glyphSize"
         :colorTop="store.numColors.top"
         :colorBottom="store.numColors.bottom"
         :fontFamily="store.glyphs.fontFamily"
@@ -95,7 +99,9 @@ const data = reactive({
         :gradientStops="store.glyphs.gradientStops"
         :offsetX="store.glyphs.offsetX * scale"
         :offsetY="store.glyphs.offsetY * scale"
-        fontSize="48"
+        :fontSize="
+          (parseInt(store.glyphs.fontSize) / defaultFontSize) * glyphSize
+        "
         :char="char"
       />
     </div>
@@ -104,7 +110,7 @@ const data = reactive({
       <Glyph
         v-for="(char, charIndex) in data.scenario.ammo.toString().split('')"
         :id="`ammo-${charIndex}`"
-        :size="50"
+        :size="glyphSize"
         :colorTop="store.numColors.top"
         :colorBottom="store.numColors.bottom"
         :fontFamily="store.glyphs.fontFamily"
@@ -113,7 +119,9 @@ const data = reactive({
         :gradientStops="store.glyphs.gradientStops"
         :offsetX="store.glyphs.offsetX * scale"
         :offsetY="store.glyphs.offsetY * scale"
-        fontSize="48"
+        :fontSize="
+          (parseInt(store.glyphs.fontSize) / defaultFontSize) * glyphSize
+        "
         :char="char"
       />
     </div>
