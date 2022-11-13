@@ -23,16 +23,12 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
 
 <template>
   <div
-    class="grid"
-    :style="` grid-template-columns: repeat(auto-fit, ${
-      store.glyphs.size + 2 * 2
-    }px);`"
+    class="grid justify-center"
+    :style="`grid-template-columns: repeat(auto-fit, ${store.glyphs.size}px); background-color: ${store.previewBgColor}`"
   >
     <div
       v-for="glyph in allGlyphs"
-      class="border-2 hover:border-sky-600 hover:border-sky-600 hover:bg-sky-100 cursor-pointer"
       :title="`Download ${numType}_${glyph.identifier}.png`"
-      :style="`background-color: ${store.previewBgColor}`"
     >
       <GlyphCrosshair
         v-show="store.drawCrosshair"
@@ -40,6 +36,7 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
         :color="store.centerHelperColor"
       />
       <Glyph
+        class="hover:bg-sky-600 cursor-pointer"
         :id="`${numType}_${glyph.identifier}`"
         :colorTop="store[`${props.numType}ColorTop`]"
         :colorBottom="store[`${props.numType}ColorBottom`]"
