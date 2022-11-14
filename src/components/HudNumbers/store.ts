@@ -1,14 +1,15 @@
 import {reactive} from "vue";
 import {defaultFontNames, gradientStyles} from "./config";
+import {GradientStop} from "./Gradient/Gradient";
 
-interface EditorState {
+interface State {
     fontNames: string[],
     fontsLoaded: boolean,
     drawCrosshair: boolean,
     glyphs: {
         fontFamily: string,
         fontSize: string,
-        gradientStops: any[],
+        gradientStops: GradientStop[],
         shadowSize: number,
         shadowColor: string,
         size: number,
@@ -21,7 +22,7 @@ interface EditorState {
     anumColors: { top: string, bottom: string },
 }
 
-export function getDefaultState(): EditorState {
+export function getDefaultState(): State {
     return {
         fontNames: defaultFontNames,
         fontsLoaded: false,
@@ -50,6 +51,6 @@ export function resetSettings(): void {
     };
 
     Object.assign(store, getDefaultState(), preservedData);
-};
+}
 
 export const store = reactive(getDefaultState());

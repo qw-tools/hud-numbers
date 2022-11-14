@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { store } from "../store";
-import { downloadGlyph } from "../../util";
+import { downloadGlyph } from "../util";
 import Char from "../Canvas/Char.vue";
 import Crosshair from "../Canvas/Crosshair.vue";
-import { Glyph } from "../glyphs";
+import { Glyph } from "./Glyph";
 
 interface Props {
   glyphs: Glyph[];

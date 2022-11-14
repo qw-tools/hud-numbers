@@ -1,4 +1,4 @@
-import {GradientStyle} from "./gradients";
+import {GradientStyle} from "./Gradient/Gradient";
 
 export const fontLoadTimeout = 500;
 

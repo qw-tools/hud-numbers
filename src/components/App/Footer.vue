@@ -1,6 +1,3 @@
-<script setup lang="ts">
-import GoogleFontPageLink from "./HudNumbers/GoogleFonts/FontLink.vue";
-</script>
 <template>
   <div class="container my-4">
     <div class="text-center text-xs space-x-2">
@@ -10,9 +7,7 @@ import GoogleFontPageLink from "./HudNumbers/GoogleFonts/FontLink.vue";
         &quot;XantoM&quot;</span
       >
       <span class="text-gray-400">|</span>
-      <GoogleFontPageLink />
-      <span class="text-gray-400">|</span>
-      <a class="text-sky-700" href="https://github.com/vikpe/qwnum"
+      <a class="text-sky-600" href="https://github.com/vikpe/qwnum"
         >Source on GitHub &#8599;</a
       >
     </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from "uuid";
 import { onMounted, onUpdated } from "vue";
-import { GradientStop } from "../gradients";
+import { GradientStop } from "../Gradient/Gradient";
 
 interface Props {
   id: string;

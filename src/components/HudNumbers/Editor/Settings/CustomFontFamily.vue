@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { reactive } from "vue";
-import { fontExist, sleep } from "../../../util";
+import { fontExist, sleep } from "../../util";
 import { store } from "../../store";
 import { fontLoadTimeout } from "../../config";
 
 const defaultMsg =
-  '<a href="https://fonts.google.com/" class="text-sky-700">Find fonts on Google Fonts ↗</a>';
+  '<a href="https://fonts.google.com/" class="text-sky-600">Find fonts on Google Fonts ↗</a>';
 const defaultMsgClass = "";
 
 const model = reactive({

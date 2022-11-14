@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { store } from "../store";
-import glyphs from "../glyphs.js";
-import GlyphGrid from "./GlyphGrid.vue";
+import glyphs from "../Glyph/Glyph";
+import GlyphGrid from "../Glyph/GlyphGrid.vue";
 import ScreenshotPreview from "./ScreenshotPreview.vue";
 import GradientColors from "./Settings/GradientColors.vue";
 import DownloadInfo from "./DownloadInfo.vue";
