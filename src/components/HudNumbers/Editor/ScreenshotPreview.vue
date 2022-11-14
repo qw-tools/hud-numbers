@@ -81,8 +81,10 @@ const data = reactive({
           :offsetX="store.glyphs.offsetX * scaleFactor"
           :offsetY="store.glyphs.offsetY * scaleFactor"
           :fontSize="
-            (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
-            previewActualFontSize
+            (
+              (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
+              previewActualFontSize
+            ).toString()
           "
           :char="char"
         />
@@ -103,8 +105,10 @@ const data = reactive({
         :offsetX="store.glyphs.offsetX * scaleFactor"
         :offsetY="store.glyphs.offsetY * scaleFactor"
         :fontSize="
-          (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
-          previewActualFontSize
+          (
+            (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
+            previewActualFontSize
+          ).toString()
         "
         :char="char"
       />
@@ -124,8 +128,10 @@ const data = reactive({
         :offsetX="store.glyphs.offsetX * scaleFactor"
         :offsetY="store.glyphs.offsetY * scaleFactor"
         :fontSize="
-          (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
-          previewActualFontSize
+          (
+            (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
+            previewActualFontSize
+          ).toString()
         "
         :char="char"
       />
