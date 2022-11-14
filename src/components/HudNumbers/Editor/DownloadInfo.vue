@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { downloadAllGlyphs } from "../util";
+import { downloadAllGlyphs } from "../util/canvas";
 import { store } from "../store";
 </script>
 

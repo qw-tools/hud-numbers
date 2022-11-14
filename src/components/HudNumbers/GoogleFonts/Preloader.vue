@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { sleep } from "../util";
 import { onMounted } from "vue";
 import GoogleFontPreload from "./Preload.vue";
 import { fontLoadTimeout } from "../config";
+import { sleep } from "../util/sys";
 
 interface Props {
   fontNames: string[];
