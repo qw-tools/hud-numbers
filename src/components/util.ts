@@ -1,5 +1,4 @@
 import urlExist from "url-exist";
-// @ts-ignore
 import {saveAs} from "file-saver";
 import {BlobReader, BlobWriter, ZipWriter} from "@zip.js/zip.js";
 
