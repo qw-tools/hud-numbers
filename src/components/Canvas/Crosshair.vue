@@ -2,10 +2,12 @@
 import { v4 as uuidv4 } from "uuid";
 import { onMounted } from "vue";
 
-const props = defineProps({
-  size: Number,
-  color: String,
-});
+interface Props {
+  size: number;
+  color: string;
+}
+
+const props = defineProps<Props>();
 
 const id = uuidv4();
 let canvas: HTMLCanvasElement | null = null;

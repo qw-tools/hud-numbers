@@ -1,12 +1,24 @@
 <script setup lang="ts">
-import { store } from "../store.js";
+import { store } from "../store";
 import { downloadGlyph } from "../../util";
-import Glyph from "../../Canvas/Char.vue";
+import Char from "../../Canvas/Char.vue";
 import Crosshair from "../../Canvas/Crosshair.vue";
+import { Glyph } from "../glyphs";
 
-const props = defineProps({
-  glyphs: Array,
-  colors: Object,
+interface Props {
+  glyphs: Glyph[];
+  colors: {
+    top: string;
+    bottom: string;
+  };
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  glyphs: () => [],
+  colors: () => ({
+    top: "",
+    bottom: "",
+  }),
 });
 </script>
 
@@ -26,7 +38,7 @@ const props = defineProps({
         :size="store.glyphs.size"
         :color="store.centerHelperColor"
       />
-      <Glyph
+      <Char
         class="glyph-canvas hover:bg-sky-600 cursor-pointer"
         :id="glyph.filename"
         :colorTop="props.colors.top"

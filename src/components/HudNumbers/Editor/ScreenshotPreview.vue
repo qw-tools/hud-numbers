@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { store } from "../store.js";
+import { store } from "../store";
 import { reactive } from "vue";
-import Glyph from "../../Canvas/Char.vue";
+import Char from "./../../Canvas/Char.vue";
 
 const scenarios = [
   {
@@ -68,7 +68,7 @@ const data = reactive({
   >
     <div style="margin-left: 104px; width: 150px">
       <div class="flex" v-show="'0' !== data.scenario.armor">
-        <Glyph
+        <Char
           v-for="(char, charIndex) in data.scenario.armor.toString().split('')"
           :id="`armor-${charIndex}`"
           :size="previewActualFontSize"
@@ -92,7 +92,7 @@ const data = reactive({
     </div>
 
     <div class="flex" style="margin-left: 118px; width: 150px">
-      <Glyph
+      <Char
         v-for="(char, charIndex) in data.scenario.health.toString().split('')"
         :id="`health-${charIndex}`"
         :size="previewActualFontSize"
@@ -115,7 +115,7 @@ const data = reactive({
     </div>
 
     <div class="flex" style="margin-left: 112px; width: 150px">
-      <Glyph
+      <Char
         v-for="(char, charIndex) in data.scenario.ammo.toString().split('')"
         :id="`ammo-${charIndex}`"
         :size="previewActualFontSize"

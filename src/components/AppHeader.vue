@@ -1,6 +1,10 @@
 <template>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    crossorigin="anonymous"
+    href="https://fonts.gstatic.com"
+    rel="preconnect"
+  />
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet"

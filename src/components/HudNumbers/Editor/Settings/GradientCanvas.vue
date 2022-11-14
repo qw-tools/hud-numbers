@@ -1,19 +1,27 @@
 <script setup lang="ts">
 import { onMounted, onUpdated } from "vue";
 import { v4 as uuidv4 } from "uuid";
+import { GradientStop } from "../../types";
 
 const id = uuidv4();
 
-const props = defineProps({
-  size: Number,
-  stops: Array,
-});
+interface Props {
+  size: number;
+  stops: GradientStop[];
+}
 
-let canvas = null;
-let ctx = null;
+const props = defineProps<Props>();
+
+let canvas: HTMLCanvasElement | null = null;
 
 const renderCanvas = () => {
   if (!canvas) {
+    return;
+  }
+
+  const ctx = canvas.getContext("2d");
+
+  if (!ctx) {
     return;
   }
 
@@ -23,7 +31,7 @@ const renderCanvas = () => {
 
   for (let i = 0; i < props.stops.length; i++) {
     const color = props.stops[i].index ? "#ffffff" : "#000000";
-    gradient.addColorStop(props.stops[i].pos, color);
+    gradient.addColorStop(props.stops[i].position, color);
   }
   ctx.fillStyle = gradient;
 
@@ -32,16 +40,13 @@ const renderCanvas = () => {
     0,
     0,
     canvas.width,
-    canvas.height * props.stops[props.stops.length - 1].pos
+    canvas.height * props.stops[props.stops.length - 1].position
   );
   ctx.fill();
 };
 
 onMounted(() => {
-  canvas = document.getElementById(id);
-  ctx = canvas.getContext("2d");
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
+  canvas = document.getElementById(id) as HTMLCanvasElement;
   renderCanvas();
 });
 

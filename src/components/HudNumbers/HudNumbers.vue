@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { store } from "./store.js";
+import { store } from "./store";
 import GoogleFontPreloader from "../GoogleFonts/FontPreloader.vue";
 import EditorBody from "./Editor/Editor.vue";
 import LoadingIndicator from "../LoadingIndicator.vue";

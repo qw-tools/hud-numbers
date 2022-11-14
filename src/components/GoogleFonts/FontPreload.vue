@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { fontNameToUrl } from "../util";
 
-defineProps({
-  fontFamily: String,
-});
+interface Props {
+  fontFamily: string;
+}
+
+const props = defineProps<Props>();
 </script>
 <template>
   <div>
     <link :href="fontNameToUrl(fontFamily)" rel="stylesheet" />
-    <div :style="{ fontFamily: fontFamily }" class="hideElement">hello</div>
+    <div :style="{ fontFamily: props.fontFamily }" class="hideElement">
+      hello
+    </div>
   </div>
 </template>
 

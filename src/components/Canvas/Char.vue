@@ -1,35 +1,59 @@
 <script setup lang="ts">
-import { default as t } from "../types.js";
 import { v4 as uuidv4 } from "uuid";
 import { onMounted, onUpdated } from "vue";
+import { GradientStop } from "../HudNumbers/types";
 
-const props = defineProps({
-  id: t.string(uuidv4()),
-  char: t.string("0"),
-  colorTop: t.string("#ff0000"),
-  colorBottom: t.string("#00ffff"),
-  fontFamily: t.string("Aldrich"),
-  fontSize: t.string("48"),
-  gradientStops: t.array([
-    { pos: 0.0, index: 0 },
-    { pos: 1.0, index: 1 },
-  ]),
-  shadowColor: t.string("#000000"),
-  shadowSize: t.number(2),
-  size: t.number(64),
-  offsetX: t.number(0),
-  offsetY: t.number(0),
+interface Props {
+  id: string;
+  char: string;
+  colorTop: string;
+  colorBottom: string;
+  fontFamily: string;
+  fontSize: string;
+  gradientStops: GradientStop[];
+  shadowColor: string;
+  shadowSize: number;
+  size: number;
+  offsetX: number;
+  offsetY: number;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  id: () => uuidv4(),
+  char: "0",
+  colorTop: "#ff0000",
+  colorBottom: "#00ffff",
+  fontFamily: "Aldrich",
+  fontSize: "48",
+  gradientStops: () => [
+    { position: 0.0, index: 0 },
+    { position: 1.0, index: 1 },
+  ],
+  shadowColor: "#000000",
+  shadowSize: 2,
+  size: 64,
+  offsetX: 0,
+  offsetY: 0,
 });
 
-let canvas = null;
-let ctx = null;
+let canvas: HTMLCanvasElement | null = null;
 
 const renderCanvas = () => {
   if (!canvas) {
     return;
   }
 
+  const ctx = canvas.getContext("2d");
+
+  if (!ctx) {
+    return;
+  }
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
   ctx.font = `${props.fontSize}px "${props.fontFamily}"`;
 
   const canvasCenter = {
@@ -77,7 +101,7 @@ const renderCanvas = () => {
     const color = props.gradientStops[i].index
       ? props.colorBottom
       : props.colorTop;
-    gradient.addColorStop(props.gradientStops[i].pos, color);
+    gradient.addColorStop(props.gradientStops[i].position, color);
   }
 
   ctx.fillStyle = gradient;
@@ -85,10 +109,7 @@ const renderCanvas = () => {
 };
 
 onMounted(() => {
-  canvas = document.getElementById(props.id);
-  ctx = canvas.getContext("2d");
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
+  canvas = document.getElementById(props.id) as HTMLCanvasElement;
   renderCanvas();
 });
 

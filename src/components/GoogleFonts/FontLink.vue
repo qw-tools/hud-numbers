@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { store } from "../HudNumbers/store.js";
+import { store } from "../HudNumbers/store";
 import { fontNameToCssSlug } from "../util";
 </script>
 

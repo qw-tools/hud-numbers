@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { store } from "../../store.js";
+import { store } from "../../store";
 </script>
 <template>
   <div class="flex items-center space-x-2">

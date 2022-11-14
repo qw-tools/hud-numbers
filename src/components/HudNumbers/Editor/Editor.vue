@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { store } from "../store.js";
+import { store } from "../store";
 import glyphs from "../glyphs.js";
 import GlyphGrid from "./GlyphGrid.vue";
 import ScreenshotPreview from "./ScreenshotPreview.vue";

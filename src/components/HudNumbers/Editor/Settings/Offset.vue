@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { store } from "../../store.js";
+import { store } from "../../store";
 import CenterCrosshair from "./CenterCrosshair.vue";
 </script>
 <template>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { store } from "../HudNumbers/store.js";
+import { store } from "../HudNumbers/store";
 import { sleep } from "../util";
 import { onMounted } from "vue";
 import GoogleFontPreload from "./FontPreload.vue";
-import { fontLoadTimeout } from "../HudNumbers/config.js";
+import { fontLoadTimeout } from "../HudNumbers/config";
 
 onMounted(() => {
   sleep(fontLoadTimeout).then(() => {

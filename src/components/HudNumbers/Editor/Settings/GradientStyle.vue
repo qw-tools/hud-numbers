@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { store } from "../../store.js";
+import { store } from "../../store";
 import GradientCanvas from "./GradientCanvas.vue";
 import isequal from "lodash.isequal";
-import { gradientStyles } from "../../config.js";
+import { gradientStyles } from "../../config";
+import { GradientStyle } from "../../types";
 
-const handleClick = (style) => {
+function handleClick(style: GradientStyle): void {
   store.glyphs.gradientStops = style.stops;
-};
+}
 </script>
 <template>
   <div class="flex items-center">

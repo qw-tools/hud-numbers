@@ -33,21 +33,25 @@ export function fontNameToUrl(name: string): string {
     return `https://fonts.googleapis.com/css2?family=${fontNameSlug}&display=block`;
 }
 
-export async function fontExist(name: string): Promise<void> {
-    await urlExist(fontNameToUrl(name))
+export async function fontExist(name: string): Promise<boolean> {
+    return await urlExist(fontNameToUrl(name)).then(r => r)
 }
 
 export async function downloadGlyph(id: string): Promise<void> {
     await downloadCanvas(document.getElementById(id) as HTMLCanvasElement, id);
 }
 
-export async function downloadAllGlyphs(filename: string): void {
+export async function downloadAllGlyphs(filename: string): Promise<void> {
     const canvases = document.getElementsByClassName("glyph-canvas") as HTMLCollectionOf<HTMLCanvasElement>;
     await downloadCanvases(canvases, filename);
 }
 
 export async function downloadCanvas(canvas: HTMLCanvasElement, filename: string) {
-    await canvasToBlob(canvas).then((blob) => saveAs(blob, `${filename}.png`));
+    await canvasToBlob(canvas).then((blob) => {
+        if (blob !== null) {
+            saveAs(blob, `${filename}.png`)
+        }
+    });
 }
 
 
