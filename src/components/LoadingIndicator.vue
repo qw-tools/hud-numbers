@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex text-black h-96 items-center justify-center space-x-2 rounded-md"
-  >
+  <div class="flex text-black items-center justify-center space-x-2">
     <svg
       class="animate-spin h-6 w-6 text-sky-600"
       fill="none"

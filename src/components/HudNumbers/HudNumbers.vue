@@ -22,7 +22,7 @@ const onFontsLoaded = (): void => {
     </div>
 
     <div v-if="!store.fontsLoaded" class="container">
-      <LoadingIndicator />
+      <LoadingIndicator class="h-96" />
     </div>
 
     <div v-if="store.fontsLoaded" class="fadeIn">
