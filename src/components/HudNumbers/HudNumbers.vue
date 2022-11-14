@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { store } from "./store.js";
 import GoogleFontPreloader from "../GoogleFonts/FontPreloader.vue";
 import EditorBody from "./Editor/Editor.vue";

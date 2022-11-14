@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import GoogleFontPageLink from "./GoogleFonts/FontLink.vue";
 </script>
 <template>

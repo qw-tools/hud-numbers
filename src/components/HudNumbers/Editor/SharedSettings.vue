@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Font from "./Settings/Font.vue";
 import Offset from "./Settings/Offset.vue";
 import FontShadow from "./Settings/Shadow.vue";

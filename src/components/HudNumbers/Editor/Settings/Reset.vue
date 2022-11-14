@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { resetSettings } from "../../store.js";
 </script>
 <template>

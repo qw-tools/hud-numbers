@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { reactive } from "vue";
 import { fontExist, sleep } from "../../../util.js";
 import { store } from "../../store.js";

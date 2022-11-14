@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { store } from "../store.js";
 import glyphs from "../glyphs.js";
 import GlyphGrid from "./GlyphGrid.vue";

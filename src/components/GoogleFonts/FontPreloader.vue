@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { store } from "../HudNumbers/store.js";
 import { sleep } from "../util.js";
 import { onMounted } from "vue";

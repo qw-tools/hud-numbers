@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { store } from "../../store.js";
 import GradientCanvas from "./GradientCanvas.vue";
 import isequal from "lodash.isequal";

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted, onUpdated } from "vue";
 import { v4 as uuidv4 } from "uuid";
 

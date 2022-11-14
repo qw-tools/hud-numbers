@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { default as t } from "../types.js";
 import { v4 as uuidv4 } from "uuid";
 import { onMounted, onUpdated } from "vue";

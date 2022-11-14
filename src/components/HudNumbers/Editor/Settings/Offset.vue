@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { store } from "../../store.js";
 import CenterCrosshair from "./CenterCrosshair.vue";
 </script>

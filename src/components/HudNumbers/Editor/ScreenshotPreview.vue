@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { store } from "../store.js";
 import { reactive } from "vue";
 import Glyph from "../../Canvas/Char.vue";

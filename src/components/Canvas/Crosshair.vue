@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { v4 as uuidv4 } from "uuid";
 import { onMounted } from "vue";
 
@@ -40,7 +40,7 @@ const drawCrosshair = (canvas, color, width = 1) => {
 };
 
 onMounted(() => {
-  canvas = document.getElementById(id);
+  canvas = document.getElementById(id) as HtmlCanvasElement;
   ctx = canvas.getContext("2d");
 
   render();
