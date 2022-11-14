@@ -16,7 +16,7 @@ export class Glyph {
 }
 
 
-function numsByType(type: string): Glyph[] {
+function glyphsByType(type: string): Glyph[] {
     const numbersChars = [...Array(10).keys()].map((n) => ({
         char: n.toString(),
         name: n.toString(),
@@ -31,7 +31,7 @@ function numsByType(type: string): Glyph[] {
 }
 
 export default {
-    nums: numsByType("num"),
-    anums: numsByType("anum"),
+    nums: glyphsByType("num"),
+    anums: glyphsByType("anum"),
 };
 
