@@ -1,8 +1,9 @@
 <script setup>
-import { fontLoadTimeout, store } from "../../store.js";
+import { store } from "../HudNumbers/store.js";
 import { sleep } from "../util.js";
 import { onMounted } from "vue";
 import GoogleFontPreload from "./FontPreload.vue";
+import { fontLoadTimeout } from "../HudNumbers/config.js";
 
 onMounted(() => {
   sleep(fontLoadTimeout).then(() => {

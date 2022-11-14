@@ -1,25 +1,13 @@
 <script setup>
-import { store } from "../../store.js";
-import { downloadGlyph } from "../util";
-import Glyph from "./Glyph.vue";
-import GlyphCrosshair from "./GlyphCrosshair.vue";
+import { store } from "../store.js";
+import { downloadGlyph } from "../../util.js";
+import Glyph from "../../Canvas/Char.vue";
+import Crosshair from "../../Canvas/Crosshair.vue";
 
 const props = defineProps({
-  numType: String,
+  glyphs: Array,
   colors: Object,
 });
-
-const numberGlyphs = [...Array(10).keys()].map((n) => ({
-  char: n.toString(),
-  identifier: n.toString(),
-  type: "number",
-}));
-const specialGlyphs = [
-  { char: ":", identifier: "colon", type: "nonNumber" },
-  { char: "-", identifier: "minus", type: "nonNumber" },
-  // { char: "/", identifier: "slash", type: "nonNumber" }, OBSOLETE?
-];
-const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
 </script>
 
 <template>
@@ -28,18 +16,19 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
     :style="`grid-template-columns: repeat(auto-fit, ${store.glyphs.size}px);`"
   >
     <div
-      v-for="glyph in allGlyphs"
-      :title="`Download ${numType}_${glyph.identifier}.png`"
+      v-for="glyph in glyphs"
+      :title="`Download ${glyph.filename}.png`"
       :style="`background-color: ${store.previewBgColor}`"
+      @click="() => downloadGlyph(glyph.filename)"
     >
-      <GlyphCrosshair
+      <Crosshair
         v-show="store.drawCrosshair"
         :size="store.glyphs.size"
         :color="store.centerHelperColor"
       />
       <Glyph
-        class="hover:bg-sky-600 cursor-pointer"
-        :id="`${numType}_${glyph.identifier}`"
+        class="glyph-canvas hover:bg-sky-600 cursor-pointer"
+        :id="glyph.filename"
         :colorTop="props.colors.top"
         :colorBottom="props.colors.bottom"
         :char="glyph.char"
@@ -51,7 +40,6 @@ const allGlyphs = numberGlyphs.concat(specialGlyphs); //.slice(0,3);
         :offsetX="store.glyphs.offsetX"
         :offsetY="store.glyphs.offsetY"
         :size="store.glyphs.size"
-        @click="() => downloadGlyph(`${numType}_${glyph.identifier}`)"
       />
     </div>
   </div>

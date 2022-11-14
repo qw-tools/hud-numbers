@@ -1,13 +1,18 @@
 <script setup>
-import DownloadAllButton from "./DownloadAllButton.vue";
+import { downloadAllGlyphs } from "../../util.js";
 </script>
+
 <template>
-  <div class="container mt-4 mb-4">
-    <div class="border bg-sky-100 border-sky-300 p-3 rounded-md mx-auto">
-      <DownloadAllButton />
-      or
-      <strong>click a single glyph</strong>, and save into
-      <code class="bg-gray-200 text-black text-sm p-1">/qw/textures/wad/</code>
-    </div>
+  <div class="border bg-sky-100 border-sky-300 p-3 rounded-md mx-auto">
+    <button
+      class="bg-gradient-to-b from-sky-500 to-sky-700 hover:from-sky-600 hover:to-sky-800 text-white rounded-md px-3 py-2 font-mono text-sm"
+      @click="downloadAllGlyphs"
+    >
+      Download all
+    </button>
+
+    or
+    <strong>click a single glyph</strong>, and save into
+    <code class="bg-gray-200 text-black text-sm p-1">/qw/textures/wad/</code>
   </div>
 </template>

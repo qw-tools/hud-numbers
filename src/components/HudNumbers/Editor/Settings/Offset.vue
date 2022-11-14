@@ -1,5 +1,5 @@
 <script setup>
-import { store } from "../../../../store.js";
+import { store } from "../../store.js";
 import CenterCrosshair from "./CenterCrosshair.vue";
 </script>
 <template>

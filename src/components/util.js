@@ -1,6 +1,7 @@
 import urlExist from "url-exist";
 import { saveAs } from "file-saver";
 import { BlobReader, BlobWriter, ZipWriter } from "@zip.js/zip.js";
+import { store } from "./HudNumbers/store.js";
 
 export const slugify = (text) => {
   return text
@@ -30,10 +31,16 @@ export const fontNameToUrl = (name) => {
 export const fontExist = async (name) => await urlExist(fontNameToUrl(name));
 
 export const downloadGlyph = (id) =>
-  downloadCanvas(document.getElementById(id), `${id}.png`);
+  downloadCanvas(document.getElementById(id), id);
+
+export const downloadAllGlyphs = async () => {
+  const canvases = document.getElementsByClassName("glyph-canvas");
+  console.log(canvases);
+  await downloadCanvases(canvases, `qwnum_${store.glyphs.fontFamily}`);
+};
 
 export const downloadCanvas = async (id, filename) =>
-  await canvasToBlob(id).then((blob) => saveAs(blob, filename));
+  await canvasToBlob(id).then((blob) => saveAs(blob, `${filename}.png`));
 
 export const canvasToBlob = async (canvas) => {
   return new Promise((resolve) => {

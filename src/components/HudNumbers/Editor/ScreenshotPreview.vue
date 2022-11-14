@@ -1,7 +1,7 @@
 <script setup>
-import { store } from "../../../store.js";
+import { store } from "../store.js";
 import { reactive } from "vue";
-import Glyph from "../../Glyphs/Glyph.vue";
+import Glyph from "../../Canvas/Char.vue";
 
 const scenarios = [
   {

@@ -1,7 +1,8 @@
 <script setup>
-import { gradientStyles, store } from "../../../../store.js";
+import { store } from "../../store.js";
 import GradientCanvas from "./GradientCanvas.vue";
 import isequal from "lodash.isequal";
+import { gradientStyles } from "../../config.js";
 
 const handleClick = (style) => {
   store.glyphs.gradientStops = style.stops;

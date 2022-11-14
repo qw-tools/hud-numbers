@@ -96,10 +96,5 @@ onUpdated(renderCanvas);
 </script>
 
 <template>
-  <canvas
-    :id="id"
-    :width="props.size"
-    :height="props.size"
-    class="glyph-canvas"
-  />
+  <canvas :id="id" :width="props.size" :height="props.size" />
 </template>
