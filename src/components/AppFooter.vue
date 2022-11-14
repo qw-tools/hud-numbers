@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GoogleFontPageLink from "./GoogleFonts/FontLink.vue";
+import GoogleFontPageLink from "./HudNumbers/GoogleFonts/FontLink.vue";
 </script>
 <template>
   <div class="container my-4">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { fontNameToUrl } from "../util";
+import { fontNameToUrl } from "../../util";
 
 interface Props {
   fontFamily: string;

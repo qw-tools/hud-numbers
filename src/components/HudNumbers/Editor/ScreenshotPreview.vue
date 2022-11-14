@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { store } from "../store";
 import { reactive } from "vue";
-import Char from "./../../Canvas/Char.vue";
+import Char from "../Canvas/Char.vue";
 
 const scenarios = [
   {

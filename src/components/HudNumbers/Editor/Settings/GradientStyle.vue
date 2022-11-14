@@ -3,7 +3,7 @@ import { store } from "../../store";
 import GradientCanvas from "./GradientCanvas.vue";
 import isequal from "lodash.isequal";
 import { gradientStyles } from "../../config";
-import { GradientStyle } from "../../types";
+import { GradientStyle } from "../../gradients";
 
 function handleClick(style: GradientStyle): void {
   store.glyphs.gradientStops = style.stops;

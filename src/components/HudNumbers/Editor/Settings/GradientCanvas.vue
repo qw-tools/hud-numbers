@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUpdated } from "vue";
 import { v4 as uuidv4 } from "uuid";
-import { GradientStop } from "../../types";
+import { GradientStop } from "../../gradients";
 
 const id = uuidv4();
 

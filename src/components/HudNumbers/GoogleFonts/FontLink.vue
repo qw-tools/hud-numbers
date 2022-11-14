@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { store } from "../HudNumbers/store";
-import { fontNameToCssSlug } from "../util";
+import { store } from "../store";
+import { fontNameToCssSlug } from "../../util";
 </script>
 
 <template>
