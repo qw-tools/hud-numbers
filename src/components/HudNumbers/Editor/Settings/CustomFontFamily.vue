@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue";
-import { fontExist, sleep } from "../../../util.js";
+import { fontExist, sleep } from "../../../util";
 import { store } from "../../store.js";
 import { fontLoadTimeout } from "../../config.js";
 

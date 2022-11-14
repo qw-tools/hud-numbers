@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { store } from "../store.js";
-import { downloadGlyph } from "../../util.js";
+import { downloadGlyph } from "../../util";
 import Glyph from "../../Canvas/Char.vue";
 import Crosshair from "../../Canvas/Crosshair.vue";
 

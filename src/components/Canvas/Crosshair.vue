@@ -8,26 +8,34 @@ const props = defineProps({
 });
 
 const id = uuidv4();
-let canvas = null;
-let ctx = null;
+let canvas: HTMLCanvasElement | null = null;
 
 const render = () => {
-  if (!canvas || !ctx) {
+  if (!canvas) {
     return;
   }
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawCrosshair(canvas, props.color, 1);
+  drawCrosshair(canvas, props.color);
 };
 
-const canvasCenter = (canvas) => ({
+const canvasCenter = (canvas: HTMLCanvasElement) => ({
   x: canvas.width / 2 - 1,
   y: canvas.height / 2 - 1,
 });
 
-const drawCrosshair = (canvas, color, width = 1) => {
+const drawCrosshair = (
+  canvas: HTMLCanvasElement,
+  color: string,
+  width: number = 1
+) => {
   const center = canvasCenter(canvas);
+  const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
 
+  if (!ctx) {
+    return;
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
   ctx.moveTo(center.x, 0);
   ctx.lineTo(center.x, canvas.height);
@@ -40,8 +48,7 @@ const drawCrosshair = (canvas, color, width = 1) => {
 };
 
 onMounted(() => {
-  canvas = document.getElementById(id) as HtmlCanvasElement;
-  ctx = canvas.getContext("2d");
+  canvas = document.getElementById(id) as HTMLCanvasElement;
 
   render();
 });
