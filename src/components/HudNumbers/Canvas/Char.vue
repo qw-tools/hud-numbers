@@ -70,13 +70,6 @@ const renderCanvas = () => {
     y: canvasCenter.y + props.offsetY,
   };
 
-  // stroke
-  if (props.strokeSize > 0) {
-    ctx.strokeStyle = props.strokeColor;
-    ctx.lineWidth = 2 * props.strokeSize;
-    ctx.strokeText(props.char, glyphCenter.x, glyphCenter.y);
-  }
-
   // "shadow"
   if (props.shadowSize > 0) {
     ctx.fillStyle = props.shadowColor;
@@ -84,6 +77,13 @@ const renderCanvas = () => {
     for (let i = 0; i < props.shadowSize; i++) {
       ctx.fillText(props.char, glyphCenter.x + i, glyphCenter.y + i);
     }
+  }
+
+  // stroke
+  if (props.strokeSize > 0) {
+    ctx.strokeStyle = props.strokeColor;
+    ctx.lineWidth = 2 * props.strokeSize;
+    ctx.strokeText(props.char, glyphCenter.x, glyphCenter.y);
   }
 
   // color(s)

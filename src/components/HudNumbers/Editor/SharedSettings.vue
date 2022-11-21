@@ -18,9 +18,9 @@ import Stroke from "./Settings/Stroke.vue";
     <hr />
     <Offset />
     <hr />
-    <FontShadow />
-    <hr />
     <Stroke />
+    <hr />
+    <FontShadow />
     <hr />
     <GradientStyle />
     <hr />
