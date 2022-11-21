@@ -63,7 +63,7 @@ const data = reactive({
     :style="`
         width: 820px;
         height: 150px;
-        background: url(https://vikpe.org/qwnum/assets/img/preview/${data.scenario.image}.jpg) no-repeat;
+        background: url(https://vikpe.org/qwnum/assets/img/preview.jpg) no-repeat;
       `"
   >
     <div style="margin-left: 104px; width: 150px">
