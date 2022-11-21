@@ -1,34 +1,13 @@
-<script setup lang="ts">
-import { store } from "../store";
-import { reactive } from "vue";
+<script lang="ts" setup>
+import {store} from "../store";
 import Char from "../Canvas/Char.vue";
+import {computed} from "vue";
 
-const scenarios = [
-  {
-    image: "preview01",
-    armor: "200",
-    health: "100",
-    ammo: "23",
-  },
-  {
-    image: "preview02",
-    armor: "0",
-    health: "25",
-    ammo: "4",
-  },
-  {
-    image: "preview03",
-    armor: "64",
-    health: "150",
-    ammo: "22",
-  },
-  {
-    image: "preview04",
-    armor: "0",
-    health: "12",
-    ammo: "52",
-  },
-];
+const scenario = {
+  armor: "165",
+  health: "94",
+  ammo: "20",
+};
 
 const screenshotScale = 0.75;
 const previewFontSize = 50;
@@ -36,110 +15,81 @@ const previewActualFontSize = previewFontSize * screenshotScale;
 const editorDefaultFontSize = 128;
 const scaleFactor = previewActualFontSize / editorDefaultFontSize;
 
-let scenarioIndex = 0;
-
-const data = reactive({
-  scenarioIndex,
-  scenario: scenarios[scenarioIndex],
+const scaledFontSize = computed(() => {
+  return (
+      (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
+      previewActualFontSize
+  ).toString();
 });
-
-// const onPrev = () => {
-//   if (0 === data.scenarioIndex) {
-//     data.scenarioIndex = scenarios.length - 1;
-//   } else {
-//     data.scenarioIndex -= 1;
-//   }
-//   data.scenario = scenarios[data.scenarioIndex];
-// };
-//
-// const onNext = () => {
-//   data.scenarioIndex = (data.scenarioIndex + 1) % scenarios.length;
-//   data.scenario = scenarios[data.scenarioIndex];
-// };
 </script>
 <template>
   <div
-    class="flex items-center"
-    :style="`
+      :style="`
         width: 820px;
-        height: 150px;
-        background: url(https://vikpe.org/qwnum/assets/img/preview.jpg) no-repeat;
+        height: 120px;
+        background: url(https://vikpe.org/qwnum/assets/img/preview.jpg) no-repeat left center;
       `"
+      class="flex items-center"
   >
-    <div style="margin-left: 104px; width: 150px">
-      <div class="flex" v-show="'0' !== data.scenario.armor">
+    <div style="margin-left: 110px; width: 150px">
+      <div class="flex">
         <Char
-          v-for="(char, charIndex) in data.scenario.armor.toString().split('')"
-          :id="`armor-${charIndex}`"
-          :size="previewActualFontSize"
-          :colorTop="store.numColors.top"
-          :colorBottom="store.numColors.bottom"
-          :fontFamily="store.glyphs.fontFamily"
-          :shadowColor="store.glyphs.shadowColor"
-          :shadowSize="store.glyphs.shadowSize * scaleFactor"
-          :strokeColor="store.glyphs.strokeColor"
-          :strokeSize="store.glyphs.strokeSize * scaleFactor"
-          :gradientStops="store.glyphs.gradientStops"
-          :offsetX="store.glyphs.offsetX * scaleFactor"
-          :offsetY="store.glyphs.offsetY * scaleFactor"
-          :fontSize="
-            (
-              (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
-              previewActualFontSize
-            ).toString()
-          "
-          :char="char"
+            v-for="(char, charIndex) in scenario.armor.toString().split('')"
+            :id="`armor-${charIndex}`"
+            :char="char"
+            :colorBottom="store.numColors.bottom"
+            :colorTop="store.numColors.top"
+            :fontFamily="store.glyphs.fontFamily"
+            :fontSize="scaledFontSize"
+            :gradientStops="store.glyphs.gradientStops"
+            :offsetX="store.glyphs.offsetX * scaleFactor"
+            :offsetY="store.glyphs.offsetY * scaleFactor"
+            :shadowColor="store.glyphs.shadowColor"
+            :shadowSize="store.glyphs.shadowSize * scaleFactor"
+            :size="previewActualFontSize"
+            :strokeColor="store.glyphs.strokeColor"
+            :strokeSize="store.glyphs.strokeSize * scaleFactor"
         />
       </div>
     </div>
 
-    <div class="flex" style="margin-left: 118px; width: 150px">
+    <div class="flex" style="margin-left: 120px; width: 150px">
       <Char
-        v-for="(char, charIndex) in data.scenario.health.toString().split('')"
-        :id="`health-${charIndex}`"
-        :size="previewActualFontSize"
-        :colorTop="store.numColors.top"
-        :colorBottom="store.numColors.bottom"
-        :fontFamily="store.glyphs.fontFamily"
-        :shadowColor="store.glyphs.shadowColor"
-        :shadowSize="store.glyphs.shadowSize * scaleFactor"
-        :strokeColor="store.glyphs.strokeColor"
-        :strokeSize="store.glyphs.strokeSize * scaleFactor"
-        :gradientStops="store.glyphs.gradientStops"
-        :offsetX="store.glyphs.offsetX * scaleFactor"
-        :offsetY="store.glyphs.offsetY * scaleFactor"
-        :fontSize="
-          (
-            (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
-            previewActualFontSize
-          ).toString()
-        "
-        :char="char"
+          v-for="(char, charIndex) in scenario.health.toString().split('')"
+          :id="`health-${charIndex}`"
+          :char="char"
+          :colorBottom="store.numColors.bottom"
+          :colorTop="store.numColors.top"
+          :fontFamily="store.glyphs.fontFamily"
+          :fontSize="scaledFontSize"
+          :gradientStops="store.glyphs.gradientStops"
+          :offsetX="store.glyphs.offsetX * scaleFactor"
+          :offsetY="store.glyphs.offsetY * scaleFactor"
+          :shadowColor="store.glyphs.shadowColor"
+          :shadowSize="store.glyphs.shadowSize * scaleFactor"
+          :size="previewActualFontSize"
+          :strokeColor="store.glyphs.strokeColor"
+          :strokeSize="store.glyphs.strokeSize * scaleFactor"
       />
     </div>
 
-    <div class="flex" style="margin-left: 112px; width: 150px">
+    <div class="flex" style="margin-left: 114px; width: 150px">
       <Char
-        v-for="(char, charIndex) in data.scenario.ammo.toString().split('')"
-        :id="`ammo-${charIndex}`"
-        :size="previewActualFontSize"
-        :colorTop="store.numColors.top"
-        :colorBottom="store.numColors.bottom"
-        :fontFamily="store.glyphs.fontFamily"
-        :shadowColor="store.glyphs.shadowColor"
-        :shadowSize="store.glyphs.shadowSize * scaleFactor"
-        :strokeColor="store.glyphs.strokeColor"
-        :strokeSize="store.glyphs.strokeSize * scaleFactor"
-        :gradientStops="store.glyphs.gradientStops"
-        :offsetX="store.glyphs.offsetX * scaleFactor"
-        :offsetY="store.glyphs.offsetY * scaleFactor"
-        :fontSize="
-          (
-            (parseInt(store.glyphs.fontSize) / editorDefaultFontSize) *
-            previewActualFontSize
-          ).toString()
-        "
-        :char="char"
+          v-for="(char, charIndex) in scenario.ammo.toString().split('')"
+          :id="`ammo-${charIndex}`"
+          :char="char"
+          :colorBottom="store.anumColors.bottom"
+          :colorTop="store.anumColors.top"
+          :fontFamily="store.glyphs.fontFamily"
+          :fontSize="scaledFontSize"
+          :gradientStops="store.glyphs.gradientStops"
+          :offsetX="store.glyphs.offsetX * scaleFactor"
+          :offsetY="store.glyphs.offsetY * scaleFactor"
+          :shadowColor="store.glyphs.shadowColor"
+          :shadowSize="store.glyphs.shadowSize * scaleFactor"
+          :size="previewActualFontSize"
+          :strokeColor="store.glyphs.strokeColor"
+          :strokeSize="store.glyphs.strokeSize * scaleFactor"
       />
     </div>
   </div>
