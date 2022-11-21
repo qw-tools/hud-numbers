@@ -1,10 +1,11 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import Font from "./Settings/Font.vue";
-import Offset from "./Settings/Offset.vue";
 import FontShadow from "./Settings/Shadow.vue";
-import Reset from "./Settings/Reset.vue";
 import GradientStyle from "./Settings/GradientStyle.vue";
+import Offset from "./Settings/Offset.vue";
 import PreviewBackground from "./Settings/PreviewBackground.vue";
+import Reset from "./Settings/Reset.vue";
+import Stroke from "./Settings/Stroke.vue";
 </script>
 <template>
   <div class="space-y-4">
@@ -18,6 +19,8 @@ import PreviewBackground from "./Settings/PreviewBackground.vue";
     <Offset />
     <hr />
     <FontShadow />
+    <hr />
+    <Stroke />
     <hr />
     <GradientStyle />
     <hr />

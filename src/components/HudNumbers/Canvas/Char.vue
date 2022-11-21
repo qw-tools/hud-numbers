@@ -13,6 +13,8 @@ interface Props {
   gradientStops: GradientStop[];
   shadowColor: string;
   shadowSize: number;
+  strokeColor: string;
+  strokeSize: number;
   size: number;
   offsetX: number;
   offsetY: number;
@@ -31,6 +33,8 @@ const props = withDefaults(defineProps<Props>(), {
   ],
   shadowColor: "#000000",
   shadowSize: 2,
+  strokeColor: "#000000",
+  strokeSize: 2,
   size: 64,
   offsetX: 0,
   offsetY: 0,
@@ -65,6 +69,13 @@ const renderCanvas = () => {
     x: canvasCenter.x + props.offsetX,
     y: canvasCenter.y + props.offsetY,
   };
+
+  // stroke
+  if (props.strokeSize > 0) {
+    ctx.strokeStyle = props.strokeColor;
+    ctx.lineWidth = 2*props.strokeSize;
+    ctx.strokeText(props.char, glyphCenter.x, glyphCenter.y);
+  }
 
   // "shadow"
   if (props.shadowSize > 0) {
