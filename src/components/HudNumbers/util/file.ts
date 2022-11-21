@@ -1,5 +1,5 @@
-import {slugify} from "./str";
+import { slugify } from "./str";
 
 export function fileSlug(filename: string): string {
-    return slugify(filename).replaceAll("-", "_");
+  return slugify(filename).replaceAll("-", "_");
 }

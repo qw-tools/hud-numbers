@@ -73,7 +73,7 @@ const renderCanvas = () => {
   // stroke
   if (props.strokeSize > 0) {
     ctx.strokeStyle = props.strokeColor;
-    ctx.lineWidth = 2*props.strokeSize;
+    ctx.lineWidth = 2 * props.strokeSize;
     ctx.strokeText(props.char, glyphCenter.x, glyphCenter.y);
   }
 
