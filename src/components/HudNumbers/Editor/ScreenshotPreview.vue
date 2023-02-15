@@ -27,7 +27,7 @@ const scaledFontSize = computed(() => {
     :style="`
         width: 820px;
         height: 120px;
-        background: url(https://vikpe.org/qwnum/assets/img/preview.jpg) no-repeat left center;
+        background: url(https://tools.quake.world/hud-numbers/assets/img/preview.jpg) no-repeat left center;
       `"
     class="flex items-center"
   >
