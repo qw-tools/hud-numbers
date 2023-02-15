@@ -20,6 +20,6 @@
         fill="currentColor"
       ></path>
     </svg>
-    <span class="text-2xl text-gray-700">loading..</span>
+    <span class="text-2xl text-gray-700">loading editor..</span>
   </div>
 </template>
