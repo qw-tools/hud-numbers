@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc && vite build --base=https://tools.quake.world/hud-numbers/",
     "preview": "vite preview",
     "lint": "yarn prettier --write src"
   },
