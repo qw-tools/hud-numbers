@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build --base=https://tools.quake.world/hud-numbers/",
     "preview": "vite preview",
-    "lint": "yarn prettier --write src"
+    "format": "yarn prettier --write src"
   },
   "dependencies": {
     "vue": "^3.2.47"
