@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const pages = [
   { url: "https://tools.quake.world/model-textures/", title: "Model Textures" },
   { url: import.meta.env.BASE_URL, title: "HUD Numbers", active: true },

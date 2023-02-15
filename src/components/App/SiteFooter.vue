@@ -1,3 +1,4 @@
+<script setup lang="ts"></script>
 <template>
   <div class="container text-xs">
     <div class="flex items-center h-10">
