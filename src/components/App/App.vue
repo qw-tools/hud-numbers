@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
+import SiteHeader from "./SiteHeader.vue";
+import SiteFooter from "./SiteFooter.vue";
 import HudNumbers from "../HudNumbers/HudNumbers.vue";
 </script>
 
 <template>
-  <Header />
+  <SiteHeader />
   <HudNumbers />
-  <Footer />
+  <SiteFooter />
 </template>
