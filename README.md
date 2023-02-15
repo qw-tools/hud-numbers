@@ -1,10 +1,8 @@
-# qwnum
+# QuakeWorld HUD Numbers Editor
 
-> QuakeWorld WAD/HUD numbers generator
+**https://tools.quake.world/hud-numbers/**
 
-**https://vikpe.org/qwnum/**
-
-<a href="https://vikpe.org/qwnum/"><img src="https://user-images.githubusercontent.com/1616817/203157308-ef9f9031-ec90-454b-a904-be9acbc92202.png" /></a>
+<a href="https://tools.quake.world/hud-numbers/"><img src="https://user-images.githubusercontent.com/1616817/203157308-ef9f9031-ec90-454b-a904-be9acbc92202.png" /></a>
 
 ## Development
 
@@ -12,8 +10,8 @@
 
 ```shell
 # clone repo
-git clone git@github.com:vikpe/qwnum.git
-cd qwnum
+git clone git@github.com:qw-tools/hud-numbers.git
+cd hud-numbers
 
 # install dependencies
 yarn install

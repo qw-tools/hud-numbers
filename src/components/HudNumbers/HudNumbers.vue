@@ -11,13 +11,13 @@ const onFontsLoaded = (): void => {
 </script>
 <template>
   <GoogleFontPreloader
-    :fontNames="defaultFontNames"
-    :onLoaded="onFontsLoaded"
+      :fontNames="defaultFontNames"
+      :onLoaded="onFontsLoaded"
   />
   <div class="bg-gray-100 border-b border-gray-300">
     <div class="bg-white shadow py-4">
       <div class="container">
-        <div class="font-bold text-xl">HUD Numbers Generator</div>
+        <div class="font-bold text-xl">HUD Numbers Editor</div>
       </div>
     </div>
 
