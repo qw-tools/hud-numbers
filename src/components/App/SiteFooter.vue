@@ -5,10 +5,12 @@
       <span>
         Created by
         <a class="text-sky-600" href="https://vikpe.org">vikpe</a> a.k.a.
-        "XantoM&quot;
+        "XantoM"
       </span>
       <span class="text-gray-400">|</span>
-      <a class="text-sky-600" href="https://github.com/vikpe/qw-gfx">Source on GitHub &#8599;</a>
+      <a class="text-sky-600" href="https://github.com/qw-tools/hud-numbers">
+        Source on GitHub &#8599;
+      </a>
     </div>
   </div>
 </template>
