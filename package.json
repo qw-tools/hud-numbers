@@ -24,6 +24,7 @@
     "lodash.isequal": "^4.5.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
+    "rollup-plugin-analyzer": "^4.0.0",
     "tailwindcss": "^3.2.6",
     "typescript": "^4.9.5",
     "url-exist": "^3.0.1",
