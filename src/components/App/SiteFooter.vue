@@ -1,19 +1,14 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="container text-xs">
-    <div class="flex items-center h-10">
-      <div>
-        &copy;
-        <a href="https://tools.quake.world" class="text-sky-600">QuakeWorld Tools</a> - Created
-        by <a class="text-sky-600" href="https://vikpe.org">vikpe</a>
-      </div>
-      <span class="text-gray-300 mx-2">|</span>
-      <a
-          href="https://github.com/qw-tools/hud-numbers"
-          class="text-sky-600"
-      >
-        Source on GitHub &#8599;
-      </a>
+  <div class="container">
+    <div class="flex h-10 items-center justify-center text-xs space-x-2">
+      <span>
+        Created by
+        <a class="text-sky-600" href="https://vikpe.org">vikpe</a> a.k.a.
+        "XantoM&quot;
+      </span>
+      <span class="text-gray-400">|</span>
+      <a class="text-sky-600" href="https://github.com/vikpe/qw-gfx">Source on GitHub &#8599;</a>
     </div>
   </div>
 </template>
