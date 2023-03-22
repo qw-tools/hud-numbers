@@ -8,7 +8,7 @@
         "XantoM&quot;
       </span>
       <span class="text-gray-400">|</span>
-      <a class="text-sky-600" href="https://github.com/qw-tools/charset">
+      <a class="text-sky-600" href="https://github.com/qw-tools/hud-numbers">
         Source on GitHub &#8599;
       </a>
     </div>
