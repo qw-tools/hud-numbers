@@ -23,6 +23,7 @@ export const defaultFontNames: string[] = [
   "Spicy Rice",
   "Stalinist One",
   "Stardos Stencil",
+  "Teko",
   "Ultra",
   "Vast Shadow",
   "Wallpoet",
